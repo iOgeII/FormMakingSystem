@@ -4,20 +4,23 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'HelloWorld');
+
 const manage = r => require.ensure([], () => r(require('@/Pages/manage')), 'manage');
 const home = r => require.ensure([], () => r(require('@/Pages/home')), 'home');
 const personManage = r => require.ensure([], () => r(require('@/Pages/personManage')), 'personManage');
 const infoRegist = r => require.ensure([], () => r(require('@/Pages/infoRegist')), 'infoRegist');
 
 const vacationApplication = r => require.ensure([], () => r(require('@/Pages/vacationApplication')), 'vacationApplication');
-
+const draggingPage = r => require.ensure([], () => r(require('@/Pages/draggingPage')), 'draggingPage');
+const explain = r => require.ensure([], () => r(require('@/Pages/explain')), 'explain');
 
 const routes = [
-    // {
-    // 	path: '/',
-    // 	name: 'HelloWorld',
-    // 	component: HelloWorld
-   	// },
+    {
+    	path: '/',
+    	name: 'HelloWorld',
+    	component: HelloWorld
+   	},
     {
     	path: '/manage',
     	name: 'manage',
@@ -38,7 +41,15 @@ const routes = [
     		path: '/vacationApplication',
     		component: vacationApplication,
     		meta: ['其他表单', '休假申请']
-    	}]
+    	},{
+            path: '/draggingPage',
+            component: draggingPage,
+            meta: '拖拽生成'
+        },{
+            path: '/explain',
+            component: explain,
+            meta: '使用说明'
+        }]
     }
 ]
 

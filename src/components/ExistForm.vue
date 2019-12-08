@@ -3,7 +3,11 @@
         <el-form ref="existForm"
           label-suffix=":"
           :size="data.config.size"
-          :model="models" :rules="rules" :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
+          :model="models" 
+          :rules="rules" 
+          :label-position="data.config.labelPosition" 
+          :label-width="data.config.labelWidth + 'px'"
+          >
             <template v-for="item in data.list">
                 <!--如果是栅格布局-->
                 <template v-if="item.type == 'grid'">
@@ -41,13 +45,14 @@
 
                 <template v-else>
                     <generate-form-item
-                      :key="item.key" 
+                      :key="item.key" z
                       :models.sync="models" 
                       :rules="rules" 
                       :widget="item" 
                       :remote="remote">
                     </generate-form-item>
                 </template>
+
             </template>
         </el-form>
     </div>
@@ -120,22 +125,3 @@ export default {
 </script>
 
 
-
-
-<!-- 
-  
-  <el-form ref="dynamicForm"
-    :size="data.config.size"
-    :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
-      <el-form-item :label="item.name" v-for="item in data.list" :key="item.key">
-        <el-input
-          v-if="item.type == 'input'"
-          :type="item.options.dataType"
-          :placeholder="item.options.placeholder"
-          :style="{width: item.options.width}"
-        ></el-input>
-        <template v-if="item.type == 'text'">
-          <span>{{item.options.defaultValue}}</span>
-        </template>
-      </el-form-item>
-  </el-form> -->

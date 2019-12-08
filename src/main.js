@@ -2,16 +2,19 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+
 import router from './router'
+import VueResource from 'vue-resource'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import ace from 'ace-builds'
- 
 
+import ace from 'ace-builds'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+Vue.use(VueResource)
 Vue.use(ace)
 
 /* eslint-disable no-new */
