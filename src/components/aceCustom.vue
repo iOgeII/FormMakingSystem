@@ -38,8 +38,6 @@
     data () {
       return {
         aceEditor: null
-//      themePath: 'ace/theme/monokai', // 不导入 webpack-resolver，该模块路径会报错
-//      modePath: 'ace/mode/javascript' // 同上
       }
     },
     computed: {

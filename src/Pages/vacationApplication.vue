@@ -8,7 +8,8 @@
 				<el-table-column label="操作">
 					<template slot-scope="scope">
 						<el-button type="primary" icon="el-icon-view" size="small" @click="handlePreview(scope.$index)">预览</el-button>
-						<el-button type="primary" icon="el-icon-tickets" size="small" @click="handleGenerateJson(scope.$index)">导出JSON</el-button>
+						<el-button type="primary" icon="el-icon-tickets" size="small" @click="handleGenerateJson(scope.$index)">生成JSON</el-button>
+						<el-button type="primary" icon="el-icon-tickets" size="small" @click="handleGenerateHtml(scope.$index)">生成代码</el-button>
 					</template>
 				</el-table-column>
 			</el-table>
@@ -30,6 +31,11 @@
 		<el-dialog title="导出JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="1000px">
 <!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.json" :content="jsonTemplate"></ace>
+		</el-dialog>
+
+		<el-dialog title="导出Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="1000px">
+<!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
+			<ace :modePath="editorMode.html" :content="htmlTemplate"></ace>
 		</el-dialog>
 	</div>
 </template>
@@ -60,15 +66,17 @@
 				],
 				previewVisible: false,
 				jsonVisible:false,
+				htmlVisible:false,
 				configData: {},
 				remoteFuncs: {},
 				jsonTemplate: '',
-        		customToolbar: [
-            		['bold', 'italic', 'underline'],
-            		[{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            		[{ 'indent': '-""' }, { 'indent': '+""' }],
-            		[{ 'header': '2' }], ['clean'], [{ 'align': 'center' }, { 'align': 'justify' }, { 'align': 'right' }]
-        		],
+				htmlTemplate: '',
+        		// customToolbar: [
+          //   		['bold', 'italic', 'underline'],
+          //   		[{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          //   		[{ 'indent': '-""' }, { 'indent': '+""' }],
+          //   		[{ 'header': '2' }], ['clean'], [{ 'align': 'center' }, { 'align': 'justify' }, { 'align': 'right' }]
+        		// ],
         		editorMode: [{'json': "ace/mode/json"}, {'html': "ace/mode/html"}]
 			}
 		},
@@ -88,6 +96,12 @@
     			const formatForm = JSON.stringify(strForm, null, '\t')
     			this.jsonTemplate = formatForm
      			this.jsonVisible = true
+      		},
+			handleGenerateHtml (id) {
+				const strForm = vacForm[id]
+    			const formatForm = JSON.stringify(strForm, null, '\t')
+    			this.htmlTemplate = formatForm
+     			this.htmlVisible = true
       		},
 		}
 	}
