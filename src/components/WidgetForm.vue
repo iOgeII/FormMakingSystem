@@ -23,6 +23,7 @@
           v-for="(element, index) in data.list"
           :label="element.name"
         >
+       
           <template v-if="element.type == 'input'">
             <el-input 
               v-model="element.options.defaultValue"
