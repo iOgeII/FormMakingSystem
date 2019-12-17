@@ -90,14 +90,8 @@
         <!-- 中间main -->
 				<el-container class="center-container" direction="vertical">
 					<el-header class="button-bar" style="height: 45px;">
-            			<slot name="action"></slot>
-<!--             			<el-button v-if="upload" type="text" size="medium" icon="el-icon-upload2" >导入JSON</el-button>
-            			<el-button v-if="clearable" type="text" size="medium" icon="el-icon-delete" >清空</el-button>
-            			<el-button v-if="preview" type="text" size="medium" icon="el-icon-view" >预览</el-button>
-            			<el-button v-if="generateJson" type="text" size="medium" icon="el-icon-tickets" >生成JSON</el-button>
-            			<el-button v-if="generateCode" type="text" size="medium" icon="el-icon-document">生成代码</el-button>
- -->         			
-                  <el-button type="text" size="medium" icon="el-icon-delete" >清空</el-button>
+            			<slot name="action"></slot>  			
+                  <el-button type="text" size="medium" icon="el-icon-delete" @click="replaceAll()">清空</el-button>
             			<el-button type="text" size="medium" icon="el-icon-view" >预览</el-button>
 <!--             			<el-button type="text" size="medium" icon="el-icon-tickets" >生成JSON</el-button> -->
             			<el-button type="text" size="medium" icon="el-icon-document">生成代码</el-button>
@@ -160,7 +154,10 @@ export default {
   method: {
     handleMove () {
       return true
-    }
+    },
+		replaceAll () {
+			this.data.list=[];
+		}
   }
 }
 
