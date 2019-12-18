@@ -79,8 +79,29 @@
 					配置
 				</el-aside>
 				
+				<cus-dialog
+					:visible="previewVisible"
+					@on-close="previewVisible = false"
+					ref="widgetPreview"
+					width="1000px"
+					form
+				>
+					<generate-form 
+						insite="true" 
+						@on-change="handleDataChange"
+						v-if="previewVisible"
+						:data="widgetForm"
+						:value="widgetModels"
+						:remote="remoteFuncs"
+						ref="generateForm"
+					>
+						<template v-slot:blank="scope">
+							Width <el-input v-model="scope.model.blank.width" style="width: 100px"></el-input>
+							Height <el-input v-model="scope.model.blank.height" style="width: 100px"></el-input>
+						</template>
+					</generate-form>
+				</cus-dialog>
 				
-
 			</el-container>
 		</el-main>
 	</el-container>
@@ -123,16 +144,39 @@ export default {
 			layoutComponents,
 			widgetForm: {
 			   list: [],
-        config: {
-          labelWidth: 100,
-          labelPosition: 'right',
-          size: 'small'
-        },
-      },
-      widgetFormSelect: null,
+        		config: {
+          			labelWidth: 100,
+          			labelPosition: 'right',
+          			size: 'small'
+        		},
+      		},
+      		widgetFormSelect: null,
+	  		previewVisible: false,
+			widgetModels: {},
+			remoteFuncs: {
+        		func_test (resolve) {
+          			setTimeout(() => {
+            			const options = [
+              				{id: '1', name: '1111'},
+              				{id: '2', name: '2222'},
+              				{id: '3', name: '3333'}
+            			]
+            		resolve(options)
+          			}, 2000)
+        		},
+        		funcGetToken (resolve) {
+          			request.get('http://tools-server.xiaoyaoji.cn/api/uptoken').then(res => {
+            			resolve(res.uptoken)
+          			})
+        		},
+        		upload_callback (response, file, fileList) {
+          			console.log('callback', response, file, fileList)
+        		}
+      		},
 		}
 	},
 	methods: {
+		// 清除
 		ClearAll () {
 			this.widgetForm = {
 				list: [],
@@ -144,12 +188,14 @@ export default {
 				}
 			}
 		},
+		// 预览
 		PreviewAll () {
-
+			this.previewVisible = true
 		},
+		// 生成代码
 		GenerateCode () {
 
-		}
+		},
 	}
 }
 </script>
