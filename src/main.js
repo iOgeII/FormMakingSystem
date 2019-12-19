@@ -11,11 +11,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import ace from 'ace-builds'
 
-Vue.config.productionTip = false
+// import VueAxios from 'vue-axios'
+// import axios from 'axios'
 
+Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.use(VueResource)
-Vue.use(ace)
+Vue.use(VueResource);
+Vue.use(ace);
+// Vue.use(VueAxios, axios); 
 
 /* eslint-disable no-new */
 new Vue({

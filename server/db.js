@@ -4,7 +4,7 @@ module.exports = {
         host: 'localhost',
         user: 'root',
         password: '123456',
-        database: 'sampledb',
+        database: 'form_making_system',
         port: '3306'
     }
 }
