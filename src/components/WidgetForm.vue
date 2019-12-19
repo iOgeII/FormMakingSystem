@@ -3,8 +3,8 @@
 		<div v-if="data.list.length == 0" class="form-empty">从左侧拖拽添加组件</div>
 		<el-form 
       :size="data.config.size" 
-      :label-position="data.config.label-position" 
-      :label-width="data.config.labelWidth"
+      :label-position="data.config.labelPosition" 
+      :label-width="data.config.labelWidth + 'px'"
     >
       <draggable
         class=""
@@ -166,7 +166,7 @@ export default {
   components: {
     Draggable
   },
-  props: ['data', 'select'],
+  props: ['data', 'select', 'config'],
   data () {
     return {
       selectWidget: this.select

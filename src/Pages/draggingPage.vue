@@ -74,9 +74,29 @@
 							:select.sync="widgetFormSelect"
 						></widget-form>
 					</el-main>
-				</el-container>		
-				<el-aside width="300px" class="fm-right">
-					配置
+				</el-container>
+
+				<el-aside width="325px" class="fm-right">
+					<el-container>
+						<!-- <el-row>
+  							<el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+  							<el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+						</el-row> -->
+						<el-header height="45px" >
+							<el-button round
+								class="config-tab" 
+								:class="{active: configTab=='widget'}" 
+								@click="handleConfigSelect('widget')">字段属性</el-button>
+							<el-button round
+								class="config-tab"
+								:class="{active: configTab=='form'}"
+								@click="handleConfigSelect('form')">表单属性</el-button>
+						</el-header>
+						<el-main class="config-content">
+							<widget-form v-show="configTab=='widget'" :data="widgetFormSelect"></widget-form>
+							<form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
+						</el-main>
+					</el-container>
 				</el-aside>
 				
 				<cus-dialog
@@ -113,6 +133,8 @@ import Draggable from 'vuedraggable'
 import WidgetForm from '@/components/WidgetForm'
 import GenerateForm from '@/components/GenerateForm'
 import CusDialog from '@/components/CusDialog'
+import FormConfig from '@/components/FormConfig'
+import WidgetConfig from '@/components/WidgetConfig'
 import {basicComponents, advanceComponents, layoutComponents} from '@/components/componentsConfig.js'
 
 export default {
@@ -121,7 +143,9 @@ export default {
 		Draggable,
 		WidgetForm,
 		GenerateForm,
-		CusDialog
+		CusDialog,
+		FormConfig,
+		WidgetConfig
 	},
 	props: {
 		basicFields: {
@@ -149,7 +173,8 @@ export default {
           			labelPosition: 'right',
           			size: 'small'
         		},
-      		},
+			},
+			configTab: 'widget',  
       		widgetFormSelect: null,
 	  		previewVisible: false,
 			widgetModels: {},
@@ -172,10 +197,18 @@ export default {
         		upload_callback (response, file, fileList) {
           			console.log('callback', response, file, fileList)
         		}
-      		},
+			  },
+			  formConfig: {
+				  labelWidth: '100px',
+				  labelPosition: 'top',
+				  size: 'small'
+			  }
 		}
 	},
 	methods: {
+		handleConfigSelect (value) {
+			this.configTab = value
+		},
 		// 清除
 		ClearAll () {
 			this.widgetForm = {
