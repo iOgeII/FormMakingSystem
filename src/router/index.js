@@ -4,7 +4,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-//const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'HelloWorld');
 const login = r => require.ensure([], () => r(require('@/Pages/login')), 'login');
 
 const manage = r => require.ensure([], () => r(require('@/Pages/manage')), 'manage');

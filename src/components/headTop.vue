@@ -7,8 +7,8 @@
 		<!-- <el-dropdown class="dropdown_container" @command="handleCommand" menu-align='start' trigger="click"> -->
 		<el-dropdown class="dropdown_container" @command="handleCommand" trigger="click">
 			<span class="el-dropdown-link">菜单
-       			<i class="el-icon-arrow-down el-icon--right"></i>
-   			</span>
+   				<i class="el-icon-arrow-down el-icon--right"></i>
+			</span>
 			<el-dropdown-menu slot="dropdown">
 				<el-dropdown-item command="home">首  页</el-dropdown-item>
 				<el-dropdown-item command="signout">退  出</el-dropdown-item>
@@ -18,21 +18,8 @@
 </template>
 
 <script>
-	import {setCookie,getCookie,delCookie} from '@/components/Cookie.js'
 	export default {
-		data(){
-            return{
-                name: ''
-            }
-        },
         mounted(){
-            /*页面挂载获取保存的cookie值，渲染到页面上*/
-            let uname = getCookie('username')
-            /*如果cookie不存在，则跳转到登录页*/
-            if(uname == ""){
-                this.$router.push('/')
-			}
-			this.name = uname
         },
 		methods: {
 			async handleCommand(command) {
@@ -40,9 +27,8 @@
 					this.$router.push('/manage');
 				}
 				else if(command == "signout"){
-					delCookie('username');
 					this.$router.push('/login');
-					window.location.reload();
+					// window.location.reload();
 				}
 			},
 		}
@@ -59,21 +45,20 @@
 		padding-left: 20px;
 	}
 	.dropdown_container{
-		height: 100%;
+		height: 65%;
 		width: 100px;
-	}
-	span{
-		width: 100%;
-		height: 100%;
-		line-height: 60px;
-		vertical-align: middle;
+		display: table-cell;
+		vertical-align:middle;
 		text-align:center;
+		padding-top: 17px;
+		padding-right: 20px;
 	}
 	.el-dropdown-link {
+		font-size: 14px;
+		height: 100%;
     	cursor: pointer;
     	color: #409EFF;
 		text-align: center;
-		display:block;
   	}
   	.el-icon-arrow-down {
     	font-size: 12px;

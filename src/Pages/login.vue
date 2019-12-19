@@ -16,12 +16,12 @@
                         <el-input class="text_field" type="text" v-model="username" @blur="inputBlur('user',username)" size="small"></el-input>
                     </el-form-item>
                     <el-form-item label="密码" label-width="70px">
-                        <el-input class="text_field" type="password" v-model="password" @blur="inputBlur('password',password)" size="small"></el-input>
+                        <el-input class="text_field" type="password" v-model="password" @blur="inputBlur('password',password)" size="small" show-password></el-input>
                     </el-form-item>
                     <el-form-item class="optionList">
                         <el-button @click="Tologin" type="primary" size="small">登录</el-button>
                         <el-button @click="resetForm" size="small">重置</el-button>
-                        <el-button type="primary" size="small">注册</el-button>
+                        <el-button @click="Toregister" type="primary" size="small">注册</el-button>
                     </el-form-item>
                 </el-form>              
             </div>
@@ -30,7 +30,6 @@
 </template>
 
 <script>
-  import {setCookie,getCookie} from '@/components/Cookie.js'
   export default {
     name: 'login',
     data() {
@@ -55,25 +54,49 @@
         Tologin(){
             var name = this.username,
                 password = this.password;
+            console.log(name,password);
+            let data = {'username':name, 'password':password};
+            /*接口请求*/
+            this.$http.post('/api/user/selectUser',data,{emulateJSON: true}).then((res)=>{
+                console.log(res);
+                /*接口的传值是(-1,该用户不存在),(0,密码错误)*/
+                if(res.data == -1){
+                    this.$message.error('用户名不存在');
+                    this.username = '';
+                    this.password = '';
+                }
+                else if(res.data == 0){
+                    this.$message.error('密码错误');
+                    this.password ='';
+                }
+                else{
+                    this.$message('登录成功');
+                    setTimeout(function(){
+                        this.$router.push('/manage');
+                    }.bind(this),1000);
+                }
+          })
+        },
+        Toregister(){
+            var name = this.username,
+                password = this.password;
             console.log(name,password)
             let data = {'username':name, 'password':password}
             /*接口请求*/
-            this.$http.post('/api/user/selectUser',data,{emulateJSON: true}).then((res)=>{
+            this.$http.post('/api/user/addUser',data,{emulateJSON: true}).then((res)=>{
                 console.log(res)
                 /*接口的传值是(-1,该用户不存在),(0,密码错误)*/
                 if(res.data == -1){
-                    this.$message.error('用户名不存在')
+                    this.$message.error('用户名已存在');
+                    this.username = '';
+                    this.password = '';
                 }
-                else if(res.data == 0){
-                    this.$message.error('密码错误')
-                }
-                else{
-                    this.$message('登录成功')
-                    setCookie('username',this.username,1000*60)
+                else if(res.status == 200){
+                    this.$message('注册成功，请重新登录');
                     setTimeout(function(){
-                        this.$router.push('/manage')
-                    }.bind(this),1000)
-                    // this.$router.push('/manage')
+                        this.username = '';
+                        this.password = '';
+                    }.bind(this),1000);
                 }
           })
         },
@@ -118,9 +141,6 @@
         }
       }
       window.onresize()
-      if(getCookie('username')){
-        this.$router.push('/manage')
-      }
     }
 }
 </script>
@@ -146,32 +166,27 @@
   }
   .loginPage{
     z-index: 2;
+    width: 400px;
+    height: 270px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 270px;
-    padding: 30px 20px 10px;
+    padding: 35px 20px 10px;
     border-radius: 8px;
     box-sizing: border-box;
     background-color: #fff;
   }
   .loginTitle{
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(37, 69, 128);
     height: 20px;
     font-style: normal;
     text-align: center;
   }
-  .text_field{
-    width: 250px;
-    height: 10px;
-    padding-left: 10px;
-  }
   .optionList{
-    width: 250px;
-    height: 30px;
-    padding: 8px 150px;
-    line-height: 0%;
+    width: 100%;
+    padding: 5px 150px;
   }
 </style>

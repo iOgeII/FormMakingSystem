@@ -9,16 +9,16 @@ import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import '@/assets/iconfont.css'
+
 import ace from 'ace-builds'
 
-// import VueAxios from 'vue-axios'
-// import axios from 'axios'
 
 Vue.config.productionTip = false
+
 Vue.use(ElementUI);
-Vue.use(VueResource);
-Vue.use(ace);
-// Vue.use(VueAxios, axios); 
+Vue.use(VueResource)
+Vue.use(ace)
 
 /* eslint-disable no-new */
 new Vue({

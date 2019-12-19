@@ -20,11 +20,10 @@
 	.homepage_section{
 		padding: 20px;
 		margin-bottom: 40px;
-
-	}
-			.section_title{
+		.section_title{
 			text-align: center;
 			font-size: 30px;
 			margin-bottom: 10px;
 		}
+	}
 </style>

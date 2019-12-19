@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div>
     <el-form ref="generateForm" 
       label-suffix=":"
@@ -58,10 +58,10 @@
 
 <script>
 import GenetateFormItem from './GenerateFormItem'
-
+import {loadJs} from '../util/index.js'
 
 export default {
-  name: 'generate-form',
+  name: 'fm-generate-form',
   components: {
     GenetateFormItem
   },
@@ -123,7 +123,7 @@ export default {
           if (valid) {
             resolve(this.models)
           } else {
-            reject(new Error('表单数据校验失败').message)
+            reject(new Error(this.$t('fm.message.validError')).message)
           }
         })
       })
@@ -156,7 +156,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 // @import '../styles/cover.scss';
 </style>
- -->

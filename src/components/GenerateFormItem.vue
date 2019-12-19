@@ -156,7 +156,7 @@
       ></el-slider>
     </template>
 
-<!--     <template v-if="widget.type=='imgupload'">
+    <template v-if="widget.type=='imgupload'">
       <fm-upload
         v-model="dataModel"
         :disabled="widget.options.disabled"
@@ -174,15 +174,15 @@
         :action="widget.options.action"
       >
       </fm-upload>
-    </template> -->
+    </template>
 
-<!--     <template v-if="widget.type == 'editor'">
+    <template v-if="widget.type == 'editor'">
       <vue-editor
         v-model="dataModel"
         :style="{width: widget.options.width}"
       >
       </vue-editor>
-    </template> -->
+    </template>
 
     <template v-if="widget.type == 'cascader'">
       <el-cascader
@@ -204,15 +204,12 @@
 </template>
 
 <script>
-// import FmUpload from './Upload'
-// import { VueEditor } from "vue2-editor"
 
 export default {
   props: ['widget', 'models', 'rules', 'remote'],
-  // components: {
-  //   FmUpload,
-  //   VueEditor
-  // },
+  components: {
+    
+  },
   data () {
     return {
       dataModel: this.models[this.widget.model]
@@ -231,11 +228,6 @@ export default {
       })
     }
 
-    if (this.widget.type === 'imgupload' && this.widget.options.isQiniu) {
-      this.remote[this.widget.options.tokenFunc]((data) => {
-        this.widget.options.token = data
-      })
-    }
   },
   methods: {
   },

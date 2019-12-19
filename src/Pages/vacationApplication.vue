@@ -14,26 +14,19 @@
 				</el-table-column>
 			</el-table>
 		</div>
-		<el-dialog 
-			title="预览" 
-			:visible.sync="previewVisible"
-        	@on-close="handleClose"
-        	width="1000px"
-          	form
-        >
+		<el-dialog title="预览" :visible.sync="previewVisible" @on-close="handleClose" width="900px" form>
 			<exist-form v-if="previewVisible" :data = "configData" :remote="remoteFuncs" insite="true" ref="existForm"></exist-form>
-			
 			<div slot="footer" class="dialog-footer">
 				<el-button @click="previewVisible = false">取 消</el-button>
 				<el-button type="primary" @click="previewVisible = false">确 定</el-button>
 			</div>
 		</el-dialog>
-		<el-dialog title="导出JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="1000px">
+		<el-dialog title="导出JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="900px">
 <!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.json" :content="jsonTemplate"></ace>
 		</el-dialog>
 
-		<el-dialog title="导出Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="1000px">
+		<el-dialog title="导出Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="900px">
 <!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.html" :content="htmlTemplate"></ace>
 		</el-dialog>
@@ -111,9 +104,5 @@
 <style>
 	.table_container{
 		padding: 20px;
-	},
-	#editor{
-        width:600px;
-        height:300px;
-    }
+	}
 </style>
