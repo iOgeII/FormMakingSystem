@@ -111,7 +111,7 @@
 <style>
 	.table_container{
 		padding: 20px;
-	},
+	}
 	#editor{
         width:600px;
         height:300px;

@@ -19,18 +19,18 @@
 									ghostClass: 'ghost'
 								}"
 							>
-								<li 
+								<el-form 
 									v-if="basicFields.indexOf(item.type)>=0" 
 									class="form-edit-widget-label" 
 									:class="{'no-put': item.type == 'divider'}" 
 									v-for="(item, index) in basicComponents" 
 									:key="index"
 								>
-									<a>
+									<p>
 										<i class="icon iconfont" :class="item.icon"></i>
 										<span>{{ item.name }}</span>
-									</a>
-								</li>
+									</p>
+								</el-form>
 							</draggable>
 						</template>
 						<template>
@@ -70,6 +70,7 @@
 					</el-header>
 					<el-main>
 						<widget-form
+							ref="widgetForm"
 							:data = "widgetForm"
 							:select.sync="widgetFormSelect"
 						></widget-form>
@@ -78,22 +79,27 @@
 
 				<el-aside width="325px" class="fm-right">
 					<el-container>
-						<!-- <el-row>
-  							<el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
-  							<el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
-						</el-row> -->
+
 						<el-header height="45px" >
-							<el-button round
-								class="config-tab" 
-								:class="{active: configTab=='widget'}" 
-								@click="handleConfigSelect('widget')">字段属性</el-button>
-							<el-button round
-								class="config-tab"
-								:class="{active: configTab=='form'}"
-								@click="handleConfigSelect('form')">表单属性</el-button>
+						<el-row>
+  							<el-col :span="12">
+								  <el-button round
+								  	class="config-tab"
+									:class="{active: configTab=='widget'}"
+									@click="handleConfigSelect('widget')"
+									:type="widgetType">字段属性</el-button>
+							</el-col>
+  							<el-col :span="12">
+								  <el-button round
+								  	class="config-tab"
+									:class="{active: configTab=='form'}"
+									@click="handleConfigSelect('form')"
+									:type="formType">表单属性</el-button>
+							</el-col>
+						</el-row>
 						</el-header>
 						<el-main class="config-content">
-							<widget-form v-show="configTab=='widget'" :data="widgetFormSelect"></widget-form>
+							<widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
 							<form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
 						</el-main>
 					</el-container>
@@ -208,6 +214,13 @@ export default {
 	methods: {
 		handleConfigSelect (value) {
 			this.configTab = value
+			if (value == 'widget'){
+				this.widgetType = 'primary'
+				this.formType = '' 
+			}else if (value == 'form') {
+				this.widgetType = ''
+				this.formType = 'primary'
+			}
 		},
 		// 清除
 		ClearAll () {
@@ -220,6 +233,8 @@ export default {
 					customClass: ''
 				}
 			}
+			
+			this.widgetFormSelect = {}
 		},
 		// 预览
 		PreviewAll () {

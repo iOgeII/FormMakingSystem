@@ -17,9 +17,9 @@
 </script>
 
 <style>
-	.homepage_section{
-		padding: 20px;
-		margin-bottom: 40px;
+.homepage_section{
+	padding: 20px;
+	margin-bottom: 40px;
 		.section_title{
 			text-align: center;
 			font-size: 30px;

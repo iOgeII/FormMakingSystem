@@ -1,6 +1,6 @@
 <template>
 	<div class="widget-form-container">
-		<div v-if="data.list.length == 0" class="form-empty">从左侧拖拽添加组件</div>
+		<div v-if="data.list.length == 0" class="form-empty" style="color:#c9cfd4">从左侧拖拽添加组件</div>
 		<el-form 
       :size="data.config.size" 
       :label-position="data.config.labelPosition" 
@@ -16,12 +16,14 @@
           disabled: false,
         }"
         @add="onAdd"
+        
       >
         <el-form-item
           class="list-form-item"
           :key="element.key"
           v-for="(element, index) in data.list"
           :label="element.name"
+          @click="handleSelectWidget(index)"
         >
        
           <template v-if="element.type == 'input'">
@@ -153,6 +155,10 @@
           </template>
 
           <el-button type="text" class="delete-action" v-on:click="onDelete(index)">删除</el-button>
+          <el-button type="text" class="edit-action" v-on:click="onEdit(index)">编辑</el-button>
+
+          <p class="iconfont dp-icon--gou" v-show="selectWidget.key == element.key"></p>
+
         </el-form-item>
       </draggable>
 		</el-form>
@@ -169,11 +175,16 @@ export default {
   props: ['data', 'select', 'config'],
   data () {
     return {
-      selectWidget: this.select
+      selectWidget: this.select,
     }
   },
   methods: {
+    handleSelectWidget (index) {
+      this.selectWidget = this.data.list[index]
+    },
+
     onAdd (evt) {
+
       const newIndex = evt.newIndex
       const key = (new Date()).getTime()
       this.$set(this.data.list, newIndex, {
@@ -183,11 +194,50 @@ export default {
         },
         key
       })
+      
+      this.selectWidget = this.data.list[newIndex]
     },
     
     onDelete (index) {
+      if (this.data.list.length - 1 === index) {
+        if (index === 0) {
+          this.selectWidget = {}
+        } else {
+          this.selectWidget = this.data.list[index - 1]
+        }
+      } else {
+        this.selectWidget = this.data.list[index + 1]
+      }
+      
       this.data.list.splice(index, 1)
+    },
+    onEdit (index) {
+      this.selectWidget = this.data.list[index]
+    }
+  },
+  watch: {
+    select (val) {
+      this.selectWidget = val
+    },
+    selectWidget: {
+      handler (val) {
+        this.$emit('update: select', val)
+      },
+      deep: true
     }
   }
 }
 </script>
+
+<style lang="scss">
+.list-form-item{
+  border: 1px dashed blue;
+  padding: 5px;
+
+  &.el-form-item{
+    margin: 2px;
+  }
+}
+
+</style>
+
