@@ -19,22 +19,18 @@
 									ghostClass: 'ghost'
 								}"
 							>
-								<li 
-									v-if="basicFields.indexOf(item.type)>=0" 
+								<el-form 
 									class="form-edit-widget-label" 
 									:class="{'no-put': item.type == 'divider'}" 
 									v-for="(item, index) in basicComponents" 
 									:key="index"
 								>
-									<a>
+									<p>
 										<i class="icon iconfont" :class="item.icon"></i>
 										<span>{{ item.name }}</span>
-									</a>
-								</li>
+									</p>
+								</el-form>
 							</draggable>
-						</template>
-						<template>
-							<div class="widget-cate">高级组件</div>
 						</template>
 						<template>
 							<div class="widget-cate">布局组件</div>
@@ -74,9 +70,41 @@
 							:select.sync="widgetFormSelect"
 						></widget-form>
 					</el-main>
-				</el-container>		
-				<el-aside width="300px" class="fm-right">
-					配置
+				</el-container>
+
+				<el-aside width="325px" class="fm-right">
+					<el-tabs v-model="activeName">
+						<el-tab-pane label="字段配置" name="widget">
+							<widget-config :data="widgetFormSelect" v-if="widgetFormSelect"></widget-config>
+						</el-tab-pane>
+						<el-tab-pane label="表单配置" name="form">
+							<form-config :data="widgetForm.config"></form-config>
+						</el-tab-pane>
+					</el-tabs>
+					<!-- <el-container>
+						<el-header height="45px" >
+						<el-row>
+  							<el-col :span="12">
+								  <el-button round
+								  	class="config-tab"
+									:class="{active: configTab=='form'}"
+									@click="handleConfigSelect('form')"
+									:type="formType">表单属性</el-button>
+							</el-col>
+							<el-col :span="12">
+								  <el-button round
+								  	class="config-tab"
+									:class="{active: configTab=='widget'}"
+									@click="handleConfigSelect('widget')"
+									:type="widgetType">字段属性</el-button>
+							</el-col>
+						</el-row>
+						</el-header>
+						<el-main class="config-content">
+							<widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
+							<form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
+						</el-main>
+					</el-container> -->
 				</el-aside>
 				
 				<cus-dialog
@@ -113,6 +141,8 @@ import Draggable from 'vuedraggable'
 import WidgetForm from '@/components/WidgetForm'
 import GenerateForm from '@/components/GenerateForm'
 import CusDialog from '@/components/CusDialog'
+import FormConfig from '@/components/FormConfig'
+import WidgetConfig from '@/components/WidgetConfig'
 import {basicComponents, advanceComponents, layoutComponents} from '@/components/componentsConfig.js'
 
 export default {
@@ -121,7 +151,9 @@ export default {
 		Draggable,
 		WidgetForm,
 		GenerateForm,
-		CusDialog
+		CusDialog,
+		FormConfig,
+		WidgetConfig
 	},
 	props: {
 		basicFields: {
@@ -149,8 +181,13 @@ export default {
           			labelPosition: 'right',
           			size: 'small'
         		},
-      		},
+			},
+			configTab: 'form',  
+			formType: 'primary',
+			// 初始状态下为空
       		widgetFormSelect: null,
+			activeName: 'widget',
+
 	  		previewVisible: false,
 			widgetModels: {},
 			remoteFuncs: {
@@ -172,10 +209,25 @@ export default {
         		upload_callback (response, file, fileList) {
           			console.log('callback', response, file, fileList)
         		}
-      		},
+			  },
+			  formConfig: {
+				  labelWidth: '100px',
+				  labelPosition: 'top',
+				  size: 'small'
+			  }
 		}
 	},
 	methods: {
+		handleConfigSelect (value) {
+			this.configTab = value
+			if (value == 'widget'){
+				this.widgetType = 'primary'
+				this.formType = '' 
+			}else if (value == 'form') {
+				this.widgetType = ''
+				this.formType = 'primary'
+			}
+		},
 		// 清除
 		ClearAll () {
 			this.widgetForm = {
@@ -187,6 +239,8 @@ export default {
 					customClass: ''
 				}
 			}
+			
+			this.widgetFormSelect = {}
 		},
 		// 预览
 		PreviewAll () {
@@ -196,6 +250,9 @@ export default {
 		GenerateCode () {
 
 		},
+		handleDataChange (field, value, data) {
+      		console.log(field, value, data)
+    	}
 	}
 }
 </script>

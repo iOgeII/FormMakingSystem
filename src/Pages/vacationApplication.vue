@@ -13,20 +13,21 @@
 					</template>
 				</el-table-column>
 			</el-table>
+			<!-- <el-button @click="test">后端测试</el-button> -->
 		</div>
-		<el-dialog title="预览" :visible.sync="previewVisible" @on-close="handleClose" width="900px" form>
-			<exist-form v-if="previewVisible" :data = "configData" :remote="remoteFuncs" insite="true" ref="existForm"></exist-form>
+		<el-dialog title="预览" v-if="previewVisible" :visible.sync="previewVisible" @on-close="previewVisible = false" width="900px" form>
+			<exist-form :visible.sync="previewVisible" :data = "configData" :remote="remoteFuncs" insite="true" ref="existForm"></exist-form>
 			<div slot="footer" class="dialog-footer">
 				<el-button @click="previewVisible = false">取 消</el-button>
 				<el-button type="primary" @click="previewVisible = false">确 定</el-button>
 			</div>
 		</el-dialog>
-		<el-dialog title="导出JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="900px">
+		<el-dialog title="生成JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="900px">
 <!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.json" :content="jsonTemplate"></ace>
 		</el-dialog>
 
-		<el-dialog title="导出Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="900px">
+		<el-dialog title="生成Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="900px">
 <!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.html" :content="htmlTemplate"></ace>
 		</el-dialog>
@@ -37,20 +38,21 @@
 	import headTop from '@/components/headTop'
 	import existForm from '@/components/ExistForm'
 	import { vacForm } from '@/components/testForm.js'
-	import { VueEditor } from 'vue2-editor'
+	import generateCode from '@/components/generateCode.js'
+	// import { VueEditor } from 'vue2-editor'
 	import ACE from '@/components/aceCustom'
 
 	export default {
 		components: {
 			headTop,
 			existForm,
-			VueEditor,
+			// VueEditor,
 			ace: ACE
 		},
 		data(){
 			return {
 				tableData: [{
-                	form_name: '事假申请表',
+					form_name: '事假申请表',
                 }, {
 	                form_name: '病假申请表',
 				},{
@@ -64,12 +66,6 @@
 				remoteFuncs: {},
 				jsonTemplate: '',
 				htmlTemplate: '',
-        		// customToolbar: [
-          //   		['bold', 'italic', 'underline'],
-          //   		[{ 'list': 'ordered' }, { 'list': 'bullet' }],
-          //   		[{ 'indent': '-""' }, { 'indent': '+""' }],
-          //   		[{ 'header': '2' }], ['clean'], [{ 'align': 'center' }, { 'align': 'justify' }, { 'align': 'right' }]
-        		// ],
         		editorMode: [{'json': "ace/mode/json"}, {'html': "ace/mode/html"}]
 			}
 		},
@@ -77,25 +73,55 @@
     	},
 		methods: {
 			handlePreview (id) {
-				const config = vacForm[id]
-				this.configData = config // 将配置信息传递到 GenerateForm 中
-				this.previewVisible = true			
-			},
-			handleClose (done) {
+				this.$message('加载中 请稍候');
 				this.previewVisible = false
+				let data = {params : {filename: 'vacForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const vacaForm = response.body[id]; // 获取到数据
+					this.configData = vacaForm;
+				})
+				// const config = vacForm[id]
+				// this.configData = config
+				setTimeout(()=>this.previewVisible = true,1000)			
 			},
+			// handleClose (done) {
+			// 	this.previewVisible = false
+			// },
 			handleGenerateJson (id) {
-				const strForm = vacForm[id]
-    			const formatForm = JSON.stringify(strForm, null, '\t')
-    			this.jsonTemplate = formatForm
+				// this.$message('加载中 请稍候');
+				this.jsonVisible = false
+				let data = {params : {filename: 'vacForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const strForm = response.body[id]; // 获取到数据
+					const formatForm = JSON.stringify(strForm, null, '\t')
+					this.jsonTemplate = formatForm
+				})
+				// const strForm = vacForm[id]
      			this.jsonVisible = true
       		},
 			handleGenerateHtml (id) {
-				const strForm = vacForm[id]
-    			const formatForm = JSON.stringify(strForm, null, '\t')
-    			this.htmlTemplate = formatForm
-     			this.htmlVisible = true
-      		},
+				// this.$message('加载中 请稍候');
+				this.htmlVisible = false
+				let data = {params : {filename: 'vacForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const strForm = response.body[id]; // 获取到数据
+					const formatForm = JSON.stringify(strForm, null, '\t')
+					this.htmlTemplate = generateCode(formatForm)
+				})
+				//const strForm = vacForm[id]
+				this.htmlVisible = true
+			},
+			test(){
+				let data = {params : {filename: 'vacForm.json'}}
+				console.log(data.params.filename);
+				this.$http.get('/api/form/fetchJson',{params: {filename: 'vacForm.json'}}).then((response) => {
+					response = response.body; // 获取到数据
+					// if (response.error === 0) {
+					// 	this.configData = response.data[id];
+						console.log(response);
+					//}
+				})
+			}
 		}
 	}
 

@@ -7,6 +7,7 @@
           :rules="rules" 
           :label-position="data.config.labelPosition" 
           :label-width="data.config.labelWidth + 'px'"
+          v-if='data.list'
           >
             <template v-for="item in data.list">
                 <!--如果是栅格布局-->
@@ -74,9 +75,10 @@ export default {
         }
     },
     created () {
-        this.generateModle(this.data.list)
+        
     },
     mounted () {
+        this.generateModle(this.data.list)
     },
     methods: {
         generateModle (genList) {
@@ -120,7 +122,21 @@ export default {
                 }
             }
         },
-    }
+
+    },
+    computed: {
+        //监听父组件的数值变化
+        dataListHistory() {
+            return this.data.list;
+        }
+    },
+    watch: {
+        dataListHistory(newValue, oldValue) {
+            this.data.list = newValue;
+            this.generateModle(this.data.list);
+            console.log(this.data.list)
+        }
+    },
 }
 </script>
 

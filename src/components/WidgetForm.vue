@@ -1,10 +1,11 @@
 <template>
 	<div class="widget-form-container">
-		<div v-if="data.list.length == 0" class="form-empty">从左侧拖拽添加组件</div>
+		<div v-if="data.list.length == 0" class="form-empty" style="color:#c9cfd4">从左侧拖拽添加组件</div>
 		<el-form 
-      :size="data.config.size" 
-      :label-position="data.config.label-position" 
-      :label-width="data.config.labelWidth"
+      :size="data.config.size"
+      label-suffix=":"
+      :label-position="data.config.labelPosition" 
+      :label-width="data.config.labelWidth + 'px'"
     >
       <draggable
         class=""
@@ -16,12 +17,15 @@
           disabled: false,
         }"
         @add="onAdd"
+        
       >
         <el-form-item
           class="list-form-item"
           :key="element.key"
           v-for="(element, index) in data.list"
           :label="element.name"
+          @click.native.stop="handleSelectWidget(index)"
+          :style="{background: (selectWidget && selectWidget.key == element.key ? '#E8E8E8' : '')}"
         >
        
           <template v-if="element.type == 'input'">
@@ -148,11 +152,22 @@
             ></el-slider>
           </template>
 
+          <template v-if="element.type == 'rate'">
+            <el-rate v-model="element.options.defaultValue"
+              :max="element.options.max"
+              :disabled="element.options.disabled"
+              :allow-half="element.options.allowHalf"
+            ></el-rate>
+          </template>
+
           <template v-if="element.type == 'text'">
             <span>{{element.options.defaultValue}}</span>
           </template>
 
           <el-button type="text" class="delete-action" v-on:click="onDelete(index)">删除</el-button>
+
+          <p class="iconfont dp-icon--gou" v-show="selectWidget.key == element.key"></p>
+
         </el-form-item>
       </draggable>
 		</el-form>
@@ -169,25 +184,95 @@ export default {
   props: ['data', 'select'],
   data () {
     return {
-      selectWidget: this.select
+      selectWidget: this.select,
     }
   },
   methods: {
-    onAdd (evt) {
+    handleSelectWidget (index) {
+      this.selectWidget = this.data.list[index]
+    },
+
+    onAdd (evt) {  //handleWidgetAdd (evt)
+      console.log('add', evt)
+      console.log('end', evt)
       const newIndex = evt.newIndex
-      const key = (new Date()).getTime()
+      const to = evt.to
+      console.log(to)
+      
+      //为拖拽到容器的元素添加唯一 key
+      const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
       this.$set(this.data.list, newIndex, {
         ...this.data.list[newIndex],
         options: {
-          ...this.data.list[newIndex].options
+          ...this.data.list[newIndex].options,
+          remoteFunc: 'func_' + key
         },
-        key
+        key,
+        // 绑定键值
+        model: this.data.list[newIndex].type + '_' + key,
+        rules: []
       })
+
+      if (this.data.list[newIndex].type === 'radio' || this.data.list[newIndex].type === 'checkbox' || this.data.list[newIndex].type === 'select') {
+        this.$set(this.data.list, newIndex, {
+          ...this.data.list[newIndex],
+          options: {
+            ...this.data.list[newIndex].options,
+            options: this.data.list[newIndex].options.options.map(item => ({
+              ...item
+            }))
+          }
+        })
+      }
+
+      if (this.data.list[newIndex].type === 'grid') {
+        this.$set(this.data.list, newIndex, {
+          ...this.data.list[newIndex],
+          columns: this.data.list[newIndex].columns.map(item => ({...item}))
+        })
+      }
+
+      this.selectWidget = this.data.list[newIndex]
     },
     
     onDelete (index) {
+      if (this.data.list.length - 1 === index) {
+        if (index === 0) {
+          this.selectWidget = {}
+        } else {
+          this.selectWidget = this.data.list[index - 1]
+        }
+      } else {
+        this.selectWidget = this.data.list[index + 1]
+      }
+      
       this.data.list.splice(index, 1)
+    },
+  },
+  watch: {
+    // 添加对select、selectWidget的监听
+    select (val) {
+      this.selectWidget = val
+    },
+    selectWidget: {
+      handler (val) {
+        this.$emit('update:select', val)
+      },
+      deep: true //为了发现对象内部值的变化
     }
   }
 }
 </script>
+
+<style lang="scss">
+.list-form-item{
+  border: 1px dashed blue;
+  padding: 5px;
+
+  &.el-form-item{
+    margin: 2px;
+  }
+}
+
+</style>
+

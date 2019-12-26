@@ -213,6 +213,18 @@ export const basicComponents = [
       defaultValue: '这是一段文本',
       customClass: '',
     }
+  },
+  {
+    type: 'rate',
+    name: '评分',
+    icon: 'icon-pingfen1',
+    options: {
+      defaultValue: null,
+      max: 5,
+      disabled: false,
+      allowHalf: false,
+      required: false
+    }
   }
 ]
 
