@@ -20,7 +20,6 @@
 								}"
 							>
 								<el-form 
-									v-if="basicFields.indexOf(item.type)>=0" 
 									class="form-edit-widget-label" 
 									:class="{'no-put': item.type == 'divider'}" 
 									v-for="(item, index) in basicComponents" 
@@ -70,7 +69,6 @@
 					</el-header>
 					<el-main>
 						<widget-form
-							ref="widgetForm"
 							:data = "widgetForm"
 							:select.sync="widgetFormSelect"
 						></widget-form>
@@ -78,17 +76,17 @@
 				</el-container>
 
 				<el-aside width="325px" class="fm-right">
-					<el-container>
-
+					<el-tabs v-model="activeName">
+						<el-tab-pane label="字段配置" name="widget">
+							<widget-config :data="widgetFormSelect" v-if="widgetFormSelect"></widget-config>
+						</el-tab-pane>
+						<el-tab-pane label="表单配置" name="form">
+							<form-config :data="widgetForm.config"></form-config>
+						</el-tab-pane>
+					</el-tabs>
+					<!-- <el-container>
 						<el-header height="45px" >
 						<el-row>
-  							<el-col :span="12">
-								  <el-button round
-								  	class="config-tab"
-									:class="{active: configTab=='widget'}"
-									@click="handleConfigSelect('widget')"
-									:type="widgetType">字段属性</el-button>
-							</el-col>
   							<el-col :span="12">
 								  <el-button round
 								  	class="config-tab"
@@ -96,13 +94,20 @@
 									@click="handleConfigSelect('form')"
 									:type="formType">表单属性</el-button>
 							</el-col>
+							<el-col :span="12">
+								  <el-button round
+								  	class="config-tab"
+									:class="{active: configTab=='widget'}"
+									@click="handleConfigSelect('widget')"
+									:type="widgetType">字段属性</el-button>
+							</el-col>
 						</el-row>
 						</el-header>
 						<el-main class="config-content">
 							<widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
 							<form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
 						</el-main>
-					</el-container>
+					</el-container> -->
 				</el-aside>
 				
 				<cus-dialog
@@ -180,8 +185,12 @@ export default {
           			size: 'small'
         		},
 			},
-			configTab: 'widget',  
+			configTab: 'form',  
+			formType: 'primary',
+			// 初始状态下为空
       		widgetFormSelect: null,
+			activeName: 'widget',
+
 	  		previewVisible: false,
 			widgetModels: {},
 			remoteFuncs: {

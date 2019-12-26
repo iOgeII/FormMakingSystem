@@ -147,6 +147,18 @@ export const basicComponents = [
     }
   },
   {
+    type: 'rate',
+    name: '评分',
+    icon: 'dp-icon-pingfen',
+    options: {
+      defaultValue: null,
+      max: 5,
+      disabled: false,
+      allowHalf: false,
+      required: false
+    }
+  },
+  {
     type: 'select',
     name: '下拉选择框',
     icon: 'dp-icon-xiala',

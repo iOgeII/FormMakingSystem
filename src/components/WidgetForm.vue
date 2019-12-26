@@ -2,7 +2,8 @@
 	<div class="widget-form-container">
 		<div v-if="data.list.length == 0" class="form-empty" style="color:#c9cfd4">从左侧拖拽添加组件</div>
 		<el-form 
-      :size="data.config.size" 
+      :size="data.config.size"
+      label-suffix=":"
       :label-position="data.config.labelPosition" 
       :label-width="data.config.labelWidth + 'px'"
     >
@@ -23,7 +24,8 @@
           :key="element.key"
           v-for="(element, index) in data.list"
           :label="element.name"
-          @click="handleSelectWidget(index)"
+          @click.native.stop="handleSelectWidget(index)"
+          :style="{background: (selectWidget && selectWidget.key == element.key ? '#E8E8E8' : '')}"
         >
        
           <template v-if="element.type == 'input'">
@@ -150,12 +152,19 @@
             ></el-slider>
           </template>
 
+          <template v-if="element.type == 'rate'">
+            <el-rate v-model="element.options.defaultValue"
+              :max="element.options.max"
+              :disabled="element.options.disabled"
+              :allow-half="element.options.allowHalf"
+            ></el-rate>
+          </template>
+
           <template v-if="element.type == 'text'">
             <span>{{element.options.defaultValue}}</span>
           </template>
 
           <el-button type="text" class="delete-action" v-on:click="onDelete(index)">删除</el-button>
-          <el-button type="text" class="edit-action" v-on:click="onEdit(index)">编辑</el-button>
 
           <p class="iconfont dp-icon--gou" v-show="selectWidget.key == element.key"></p>
 
@@ -172,7 +181,7 @@ export default {
   components: {
     Draggable
   },
-  props: ['data', 'select', 'config'],
+  props: ['data', 'select'],
   data () {
     return {
       selectWidget: this.select,
@@ -211,19 +220,17 @@ export default {
       
       this.data.list.splice(index, 1)
     },
-    onEdit (index) {
-      this.selectWidget = this.data.list[index]
-    }
   },
   watch: {
+    // 添加对select、selectWidget的监听
     select (val) {
       this.selectWidget = val
     },
     selectWidget: {
       handler (val) {
-        this.$emit('update: select', val)
+        this.$emit('update:select', val)
       },
-      deep: true
+      deep: true //为了发现对象内部值的变化
     }
   }
 }
