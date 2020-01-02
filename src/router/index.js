@@ -48,7 +48,7 @@ const routes = [
     	},{
             path: '/draggingPage',
             component: draggingPage,
-            meta: '拖拽生成'
+            meta: ['自助表单','拖拽生成']
         },{
             path: '/explain',
             component: explain,

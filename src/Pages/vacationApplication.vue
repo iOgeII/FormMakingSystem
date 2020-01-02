@@ -39,14 +39,12 @@
 	import existForm from '@/components/ExistForm'
 	import { vacForm } from '@/components/testForm.js'
 	import generateCode from '@/components/generateCode.js'
-	// import { VueEditor } from 'vue2-editor'
 	import ACE from '@/components/aceCustom'
 
 	export default {
 		components: {
 			headTop,
 			existForm,
-			// VueEditor,
 			ace: ACE
 		},
 		data(){

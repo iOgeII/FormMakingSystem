@@ -1,77 +1,11 @@
-<el-form-item
-  class="list-form-item"
-  v-for="(element, index) in data.list"
-  :label="element.name"
->
-  <template v-if="element.type == 'input'">
-    <el-input
-      :style="{width: element.options.width}"
-      :placeholder="element.options.placeholder"
-      v-model="element.options.defaultValue"
-    ></el-input>
-  </template>
-</el-form-item>
-
-<script>
-  
-export default {
-  props: ['element', 'select', 'index', 'data'],
-  components: {
-
-  },
-  data () {
-    return {
-      selectWidget: this.select
-    }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  },
-  watch: {
-    select (val) {
-      this.selectWidget = val
-    },
-    selectWidget: {
-      handler (val) {
-        this.$emit('update:select', val)
-      },
-      deep: true
-    }
-  }
-}
-
-</script>
-
-<!-- <template>
+<template>
   <el-form-item class="widget-view"
-    v-if="element && element.key"
-    :class="{active: selectWidget.key == element.key, 'is_req': element.options.required}"
-    :label="element.name"
-    @click.native.stop="handleSelectWidget(index)"
-  >
-    <template v-if="element.type == 'input'">
-      <el-input
-        :style="{width: element.options.width}"
-        :placeholder="element.options.placeholder"
-        v-model="element.options.defaultValue"
-      ></el-input>
-    </template>
-
-  </el-form-item>
-</template>
-
- -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-<!-- <template>
-	<el-form-item class="widget-view"
-		v-if="element && element.key"
-		v-for="(element, index) in data.list"
-		:label="element.name"
-	>
+      v-if="element && element.key" 
+      :class="{active: selectWidget.key == element.key, 'is_req': element.options.required}"
+      :label="element.name"
+      @click.native.stop="handleSelectWidget(index)"
+      :style="{background: (selectWidget && selectWidget.key == element.key ? '#E8E8E8' : '')}"
+    >
         <template v-if="element.type == 'input'">
           <el-input 
             v-model="element.options.defaultValue"
@@ -216,41 +150,67 @@ export default {
           <span>{{element.options.defaultValue}}</span>
         </template>
 
-      
-	</el-form-item>
+        <el-button type="text" class="delete-action" v-on:click="handleWidgetDelete(index)">删除</el-button>
+    </el-form-item>
 </template>
 
 <script>
-import { VueEditor } from "vue2-editor"
-
 export default {
-	props: ['element', 'select', 'index', 'data'],
-	components: {
-		VueEditor
-	},
-	data () {
-		return {
-			selectWidget: this.select
-		}
-	},
-	mounted (){
-
-	},
-	methods: {
+  props: ['element', 'select', 'index', 'data'],
+  components: {
     
-	},
-  	watch: {
-    	select (val) {
-      		this.selectWidget = val
-    	},
-    	selectWidget: {
-      		handler (val) {
-        	this.$emit('update:select', val)
-      		},
-      	deep: true
-    	}
-  	}
+  },
+  data () {
+    return {
+      selectWidget: this.select
+    }
+  },
+  mounted () {
+    
+  },
+  methods: {
+    handleSelectWidget (index) {
+      this.selectWidget = this.data.list[index]
+    },
+    handleWidgetDelete (index) {
+      if (this.data.list.length - 1 === index) {
+        if (index === 0) {
+          this.selectWidget = {}
+        } else {
+          this.selectWidget = this.data.list[index - 1]
+        }
+      } else {
+        this.selectWidget = this.data.list[index + 1]
+      }
+
+      this.$nextTick(() => {
+        this.data.list.splice(index, 1)
+      })
+    },
+  },
+  watch: {
+    select (val) {
+      this.selectWidget = val
+    },
+    selectWidget: {
+      handler (val) {
+        this.$emit('update:select', val)
+      },
+      deep: true
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.widget-view{
+  border: 1px dashed blue;
+  padding: 5px;
+
+  &.el-form-item{
+    margin: 2px;
+  }
 }
 
+</style>
 
-</script> -->

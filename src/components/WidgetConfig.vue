@@ -61,6 +61,12 @@
                 </div>
             </template>
 
+            <template v-if="data.type=='text'">
+                <el-form-item label="文字信息">
+                    <el-input v-model="data.options.defaultValue"></el-input>
+                </el-form-item>
+            </template>
+
             <template v-if="data.type=='checkbox' || (data.type=='select' && data.options.multiple)">
                 <el-checkbox-group v-model="data.options.defaultValue">
                     <draggable tag="ul" :list="data.options.options" 
