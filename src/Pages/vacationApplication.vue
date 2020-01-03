@@ -3,7 +3,6 @@
 		<head-top></head-top>
 		<div class="table_container">
 			<el-table :data="tableData" highlight-current-row style="width: 100%" >
-<!-- 			    <el-table-column type="index"></el-table-column> -->
 				<el-table-column property="form_name" label="表名" width="500"></el-table-column>
 				<el-table-column label="操作">
 					<template slot-scope="scope">
@@ -23,12 +22,10 @@
 			</div>
 		</el-dialog>
 		<el-dialog title="生成JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="900px">
-<!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.json" :content="jsonTemplate"></ace>
 		</el-dialog>
 
 		<el-dialog title="生成Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="900px">
-<!-- 			<vue-editor v-model="jsonTemplate" :editorToolbar="customToolbar"></vue-editor> -->
 			<ace :modePath="editorMode.html" :content="htmlTemplate"></ace>
 		</el-dialog>
 	</div>
@@ -50,12 +47,8 @@
 		data(){
 			return {
 				tableData: [{
-					form_name: '事假申请表',
-                }, {
-	                form_name: '病假申请表',
-				},{
-	                form_name: '带薪假申请表',
-				},
+					form_name: '休假申请表',
+                }, 
 				],
 				previewVisible: false,
 				jsonVisible:false,
@@ -78,15 +71,9 @@
 					const vacaForm = response.body[id]; // 获取到数据
 					this.configData = vacaForm;
 				})
-				// const config = vacForm[id]
-				// this.configData = config
 				setTimeout(()=>this.previewVisible = true,1000)			
 			},
-			// handleClose (done) {
-			// 	this.previewVisible = false
-			// },
 			handleGenerateJson (id) {
-				// this.$message('加载中 请稍候');
 				this.jsonVisible = false
 				let data = {params : {filename: 'vacForm.json'}}
 				this.$http.get('/api/form/fetchJson',data).then((response) => {
@@ -94,11 +81,9 @@
 					const formatForm = JSON.stringify(strForm, null, '\t')
 					this.jsonTemplate = formatForm
 				})
-				// const strForm = vacForm[id]
      			this.jsonVisible = true
       		},
 			handleGenerateHtml (id) {
-				// this.$message('加载中 请稍候');
 				this.htmlVisible = false
 				let data = {params : {filename: 'vacForm.json'}}
 				this.$http.get('/api/form/fetchJson',data).then((response) => {
@@ -106,7 +91,6 @@
 					const formatForm = JSON.stringify(strForm, null, '\t')
 					this.htmlTemplate = generateCode(formatForm)
 				})
-				//const strForm = vacForm[id]
 				this.htmlVisible = true
 			},
 			test(){
@@ -114,10 +98,7 @@
 				console.log(data.params.filename);
 				this.$http.get('/api/form/fetchJson',{params: {filename: 'vacForm.json'}}).then((response) => {
 					response = response.body; // 获取到数据
-					// if (response.error === 0) {
-					// 	this.configData = response.data[id];
-						console.log(response);
-					//}
+					console.log(response);
 				})
 			}
 		}

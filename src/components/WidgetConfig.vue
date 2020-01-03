@@ -4,13 +4,13 @@
         v-if="show"
     >
         <el-form label-position="top">
-            <el-form-item label="标题">
+            <el-form-item label="标题" v-if="data.type!='grid'">
                 <el-input v-model="data.name"></el-input>
             </el-form-item>
             <el-form-item label="宽度" v-if="Object.keys(data.options).indexOf('width')>=0">
                 <el-input v-model="data.options.width"></el-input>
             </el-form-item>
-            <el-form-item label="占地内容" v-if="Object.keys(data.options).indexOf('placeholder')>=0 && (data.type!='time' || data.type!='date')">
+            <el-form-item label="占位内容" v-if="Object.keys(data.options).indexOf('placeholder')>=0 && (data.type!='time' || data.type!='date')">
                 <el-input v-model="data.options.placeholder"></el-input>
             </el-form-item>
             <el-form-item label="显示输入框" v-if="Object.keys(data.options).indexOf('showInput')>=0">
@@ -174,6 +174,29 @@
                 </el-form-item>
             </template>
 
+            <template v-if="data.type == 'grid'">
+                <el-form-item label="栅格间隔">
+                    <el-input type="number" v-model.number="data.options.gutter"></el-input>
+                </el-form-item>
+                <el-form-item label="列配置项">
+                    <draggable tag="ul" :list="data.columns" 
+                        v-bind="{group:{ name:'options'}, ghostClass: 'ghost',handle: '.drag-item'}"
+                        handle=".drag-item"
+                    >
+                        <li v-for="(item, index) in data.columns" :key="index" >
+                            <i class="drag-item" style="font-size: 16px;margin: 0 5px;cursor: move;"><i class="iconfont icon-icon_bars"></i></i>
+                            <el-input placeholder="栅格值" size="mini" style="width: 100px;" type="number" v-model.number="item.span"></el-input>
+              
+                            <el-button @click="handleOptionsRemove(index)" circle plain type="danger" size="mini" icon="el-icon-minus" style="padding: 4px;margin-left: 5px;"></el-button>
+              
+                        </li>
+                    </draggable>
+                    <div style="margin-left: 22px;">
+                        <el-button type="text" @click="handleAddColumn">添加列</el-button>
+                    </div>
+                </el-form-item>
+            </template>
+
             <template v-if="data.type != 'grid'">
                 <!-- <el-form-item label="数据绑定key">
                     <el-input v-model="data.model"></el-input>
@@ -232,7 +255,13 @@ export default {
                     value: '新选项'
                 })
             }
-        }
+        },
+        handleAddColumn () {
+            this.data.columns.push({
+            span: '',
+            list: []
+            })
+        },
     },
     watch: {
         'data.options.isRange': function(val) {

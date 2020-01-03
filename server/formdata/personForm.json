@@ -1,0 +1,1171 @@
+[
+  {
+    "list": [
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": true,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578032178000_32563"
+                },
+                "name": "姓名",
+                "key": "1578032178000_32563",
+                "model": "input_1578032178000_32563",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "姓名格式不正确"
+                  },
+                  {
+                    "required": true,
+                    "message": "姓名必须填写"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": true,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "男"
+                    },
+                    {
+                      "value": "女"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046151000_5550"
+                },
+                "name": "性别",
+                "key": "1578046151000_5550",
+                "model": "select_1578046151000_5550",
+                "rules": [
+                  {
+                    "required": true,
+                    "message": "性别必须填写"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578032175000_32074"
+        },
+        "name": "栅格布局",
+        "key": "1578032175000_32074",
+        "model": "grid_1578032175000_32074",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578046228000_49236"
+                },
+                "name": "出生日期",
+                "key": "1578046228000_49236",
+                "model": "date_1578046228000_49236",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "中专"
+                    },
+                    {
+                      "value": "大专"
+                    },
+                    {
+                      "value": "本科"
+                    },
+                    {
+                      "value": "硕士"
+                    },
+                    {
+                      "value": "博士"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046242000_60700"
+                },
+                "name": "学历",
+                "key": "1578046242000_60700",
+                "model": "select_1578046242000_60700",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578032199000_61887"
+        },
+        "name": "栅格布局",
+        "key": "1578032199000_61887",
+        "model": "grid_1578032199000_61887",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": true,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578032219000_94625"
+                },
+                "name": "民族",
+                "key": "1578032219000_94625",
+                "model": "input_1578032219000_94625",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "民族格式不正确"
+                  },
+                  {
+                    "required": true,
+                    "message": "民族必须填写"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "群众"
+                    },
+                    {
+                      "value": "中共党员"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046312000_56530"
+                },
+                "name": "政治面貌",
+                "key": "1578046312000_56530",
+                "model": "select_1578046312000_56530",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578032217000_79945"
+        },
+        "name": "栅格布局",
+        "key": "1578032217000_79945",
+        "model": "grid_1578032217000_79945",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578032508000_88943"
+                },
+                "name": "健康状况",
+                "key": "1578032508000_88943",
+                "model": "input_1578032508000_88943",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "健康状况格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "已婚"
+                    },
+                    {
+                      "value": "未婚"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046358000_30977"
+                },
+                "name": "婚姻状况",
+                "key": "1578046358000_30977",
+                "model": "select_1578046358000_30977",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578032506000_1985"
+        },
+        "name": "栅格布局",
+        "key": "1578032506000_1985",
+        "model": "grid_1578032506000_1985",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": true,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578032480000_27098"
+        },
+        "name": "身份证号码",
+        "key": "1578032480000_27098",
+        "model": "input_1578032480000_27098",
+        "rules": [
+          {
+            "type": "string",
+            "message": "身份证号码格式不正确"
+          },
+          {
+            "required": true,
+            "message": "身份证号码必须填写"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578032257000_54232"
+        },
+        "name": "户籍地址",
+        "key": "1578032257000_54232",
+        "model": "input_1578032257000_54232",
+        "rules": [
+          {
+            "type": "string",
+            "message": "户籍地址格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578032265000_98310"
+        },
+        "name": "居住地址",
+        "key": "1578032265000_98310",
+        "model": "input_1578032265000_98310",
+        "rules": [
+          {
+            "type": "string",
+            "message": "居住地址格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": true,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578032273000_47516"
+        },
+        "name": "联系电话",
+        "key": "1578032273000_47516",
+        "model": "input_1578032273000_47516",
+        "rules": [
+          {
+            "type": "string",
+            "message": "联系电话格式不正确"
+          },
+          {
+            "required": true,
+            "message": "联系电话必须填写"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578032356000_55057"
+        },
+        "name": "工作经历",
+        "key": "1578032356000_55057",
+        "model": "textarea_1578032356000_55057",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578032294000_57031"
+        },
+        "name": "技术特长",
+        "key": "1578032294000_57031",
+        "model": "textarea_1578032294000_57031",
+        "rules": []
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small"
+    }
+  },
+  {
+    "list": [
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033079000_80419"
+                },
+                "name": "部门",
+                "key": "1578033079000_80419",
+                "model": "input_1578033079000_80419",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "部门格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033085000_47193"
+                },
+                "name": "姓名",
+                "key": "1578033085000_47193",
+                "model": "input_1578033085000_47193",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "姓名格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033077000_67285"
+        },
+        "name": "栅格布局",
+        "key": "1578033077000_67285",
+        "model": "grid_1578033077000_67285",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578046469000_53295"
+                },
+                "name": "入职时间",
+                "key": "1578046477000_2923",
+                "model": "date_1578046469000_53295",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578046480000_10636"
+                },
+                "name": "离职时间",
+                "key": "1578046480000_10636",
+                "model": "date_1578046480000_10636",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033092000_86215"
+        },
+        "name": "栅格布局",
+        "key": "1578033092000_86215",
+        "model": "grid_1578033092000_86215",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578046495000_94087"
+                },
+                "name": "止薪日期",
+                "key": "1578046495000_94087",
+                "model": "date_1578046495000_94087",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "number",
+                "icon": "icon-number",
+                "options": {
+                  "width": "",
+                  "required": false,
+                  "defaultValue": 0,
+                  "min": 0,
+                  "max": 0,
+                  "step": 1,
+                  "disabled": false,
+                  "controlsPosition": "",
+                  "remoteFunc": "func_1578046521000_48430"
+                },
+                "name": "出勤天数",
+                "key": "1578046521000_48430",
+                "model": "number_1578046521000_48430",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033438000_92224"
+        },
+        "name": "栅格布局",
+        "key": "1578033438000_92224",
+        "model": "grid_1578033438000_92224",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578033552000_35318"
+        },
+        "name": "应发工资",
+        "key": "1578033552000_35318",
+        "model": "input_1578033552000_35318",
+        "rules": [
+          {
+            "type": "string",
+            "message": "应发工资格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578033110000_24865"
+        },
+        "name": "离职原因",
+        "key": "1578033110000_24865",
+        "model": "textarea_1578033110000_24865",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578033332000_52606"
+        },
+        "name": "审批意见",
+        "key": "1578033332000_52606",
+        "model": "textarea_1578033332000_52606",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578033349000_58597"
+        },
+        "name": "备注",
+        "key": "1578033349000_58597",
+        "model": "textarea_1578033349000_58597",
+        "rules": []
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  },
+  {
+    "list": [
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033744000_26815"
+                },
+                "name": "姓名",
+                "key": "1578033744000_26815",
+                "model": "input_1578033744000_26815",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "姓名格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "男"
+                    },
+                    {
+                      "value": "女"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046618000_97752"
+                },
+                "name": "性别",
+                "key": "1578046618000_97752",
+                "model": "select_1578046618000_97752",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033743000_60938"
+        },
+        "name": "栅格布局",
+        "key": "1578033743000_60938",
+        "model": "grid_1578033743000_60938",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578046639000_96116"
+                },
+                "name": "入职时间",
+                "key": "1578046639000_96116",
+                "model": "date_1578046639000_96116",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "群众"
+                    },
+                    {
+                      "value": "中共党员"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578046650000_49611"
+                },
+                "name": "政治面貌",
+                "key": "1578046650000_49611",
+                "model": "select_1578046650000_49611",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033808000_88560"
+        },
+        "name": "栅格布局",
+        "key": "1578033808000_88560",
+        "model": "grid_1578033808000_88560",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033853000_35422"
+                },
+                "name": "在职单位",
+                "key": "1578033853000_35422",
+                "model": "input_1578033853000_35422",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "在职单位格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033878000_16541"
+                },
+                "name": "现任职务",
+                "key": "1578033878000_16541",
+                "model": "input_1578033878000_16541",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "现任职务格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033852000_81340"
+        },
+        "name": "栅格布局",
+        "key": "1578033852000_81340",
+        "model": "grid_1578033852000_81340",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033887000_2034"
+                },
+                "name": "拟调单位",
+                "key": "1578033887000_2034",
+                "model": "input_1578033887000_2034",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "拟调单位格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578033888000_18667"
+                },
+                "name": "拟任职务",
+                "key": "1578033888000_18667",
+                "model": "input_1578033888000_18667",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "拟任职务格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578033885000_37240"
+        },
+        "name": "栅格布局",
+        "key": "1578033885000_37240",
+        "model": "grid_1578033885000_37240",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578033956000_73421"
+        },
+        "name": "工作简历",
+        "key": "1578033956000_73421",
+        "model": "textarea_1578033956000_73421",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578033996000_74535"
+        },
+        "name": "调动理由",
+        "key": "1578033996000_74535",
+        "model": "textarea_1578033996000_74535",
+        "rules": []
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578034279000_1636"
+        },
+        "name": "备注",
+        "key": "1578034279000_1636",
+        "model": "textarea_1578034279000_1636",
+        "rules": []
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  }
+]

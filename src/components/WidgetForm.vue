@@ -19,7 +19,7 @@
         @add="onAdd"
       >
 
-        <transition-group name="fade" tag="div" class="widget-form-list" style="height:400px">
+        <transition-group name="fade" tag="div" class="widget-form-list" style="height:450px">
           <template v-for="(element, index) in data.list">
             <template v-if="element.type == 'grid'">
               <el-row 
@@ -32,6 +32,7 @@
                 :justify="element.options.justify"
                 :align="element.options.align"
                 @click.native="handleSelectWidget(index)"
+                :style="{background: (selectWidget && selectWidget.key == element.key ? '#E8E8E8' : '')}"
               >
                 <el-col
                   class="grid-col"
@@ -49,7 +50,6 @@
                       <widget-form-item
                         v-for="(el, i) in col.list"
                         :key="el.key"
-                        v-if="el.key"
                         :element="el"
                         :select.sync="selectWidget"
                         :index="i"

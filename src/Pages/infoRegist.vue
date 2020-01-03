@@ -2,70 +2,108 @@
 	<div class="fillcontain">
 		<head-top></head-top>
 		<div class="table_container">
-			<el-table :data="tableData" highlight-current-row style="width: 100%">
-				<el-table-column property="form_name" label="表名" width="600"></el-table-column>
+			<el-table :data="tableData" highlight-current-row style="width: 100%" >
+				<el-table-column property="form_name" label="表名" width="500"></el-table-column>
 				<el-table-column label="操作">
-					
-					<el-button type="primary" icon="el-icon-view" size="small" @click="dialogFormVisible = true">预览</el-button>
-					<el-dialog title="预览" :visible.sync="dialogFormVisible">
-						<el-form :model="form">
-							<el-form-item label="表单名称" :label-width="formLabelWidth">
-								<el-input v-model="form.name" autocomplete="off"></el-input>
-							</el-form-item>
-							<el-form-item label="表单选项" :label-width="formLabelWidth">
-								<el-select v-model="form.region" placeholder="请选择">
-									<el-option label="选项一" value="1a"></el-option>
-									<el-option label="选项二" value="1b"></el-option>
-								</el-select>
-							</el-form-item>
-						</el-form>
-					</el-dialog>
-					
-					<el-button type="primary" icon="el-icon-tickets" size="small">导出JSON</el-button>
-				
+					<template slot-scope="scope">
+						<el-button type="primary" icon="el-icon-view" size="small" @click="handlePreview(scope.$index)">预览</el-button>
+						<el-button type="primary" icon="el-icon-tickets" size="small" @click="handleGenerateJson(scope.$index)">生成JSON</el-button>
+						<el-button type="primary" icon="el-icon-tickets" size="small" @click="handleGenerateHtml(scope.$index)">生成代码</el-button>
+					</template>
 				</el-table-column>
 			</el-table>
+			<!-- <el-button @click="test">后端测试</el-button> -->
 		</div>
+		<el-dialog title="预览" v-if="previewVisible" :visible.sync="previewVisible" @on-close="previewVisible = false" width="900px" form>
+			<exist-form :visible.sync="previewVisible" :data = "configData" :remote="remoteFuncs" insite="true" ref="existForm"></exist-form>
+			<div slot="footer" class="dialog-footer">
+				<el-button @click="previewVisible = false">取 消</el-button>
+				<el-button type="primary" @click="previewVisible = false">确 定</el-button>
+			</div>
+		</el-dialog>
+		<el-dialog title="生成JSON" :visible.sync="jsonVisible" @on-close="jsonVisible = false" width="900px">
+			<ace :modePath="editorMode.json" :content="jsonTemplate"></ace>
+		</el-dialog>
+
+		<el-dialog title="生成Html" :visible.sync="htmlVisible" @on-close="htmlVisible = false" width="900px">
+			<ace :modePath="editorMode.html" :content="htmlTemplate"></ace>
+		</el-dialog>
 	</div>
 </template>
 
 <script>
 	import headTop from '@/components/headTop'
+	import existForm from '@/components/ExistForm'
+	import { vacForm } from '@/components/testForm.js'
+	import generateCode from '@/components/generateCode.js'
+	import ACE from '@/components/aceCustom'
 
 	export default {
+		components: {
+			headTop,
+			existForm,
+			ace: ACE
+		},
 		data(){
 			return {
 				tableData: [{
-                	form_name: '个人信息登记表',
+					form_name: '个人信息登记表',
                 }, {
 	                form_name: '履历信息登记表',
 				},
 				],
-				dialogFormVisible: false,
-
-				form: {
-					name: '',
-					region: '',
-					date1: '',
-					date2: '',
-					delivery: false,
-					type: [],
-					resource: '',
-					desc: ''
-				},
-				formLabelWidth: '120px',
-				
-				currentRow: null,
-				offset: 0,
-				limit: 20,
-				count: 0,
-				currentPage: 1,
+				previewVisible: false,
+				jsonVisible:false,
+				htmlVisible:false,
+				configData: {},
+				remoteFuncs: {},
+				jsonTemplate: '',
+				htmlTemplate: '',
+        		editorMode: [{'json': "ace/mode/json"}, {'html': "ace/mode/html"}]
 			}
 		},
-		components: {
-			headTop,
-		},
-
+		mounted () {
+    	},
+		methods: {
+			handlePreview (id) {
+				this.$message('加载中 请稍候');
+				this.previewVisible = false
+				let data = {params : {filename: 'infoForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const vacaForm = response.body[id]; // 获取到数据
+					this.configData = vacaForm;
+				})
+				setTimeout(()=>this.previewVisible = true,1000)			
+			},
+			handleGenerateJson (id) {
+				this.jsonVisible = false
+				let data = {params : {filename: 'infoForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const strForm = response.body[id]; // 获取到数据
+					const formatForm = JSON.stringify(strForm, null, '\t')
+					this.jsonTemplate = formatForm
+				})
+     			this.jsonVisible = true
+      		},
+			handleGenerateHtml (id) {
+				this.htmlVisible = false
+				let data = {params : {filename: 'infoForm.json'}}
+				this.$http.get('/api/form/fetchJson',data).then((response) => {
+					const strForm = response.body[id]; // 获取到数据
+					const formatForm = JSON.stringify(strForm, null, '\t')
+					this.htmlTemplate = generateCode(formatForm)
+				})
+				this.htmlVisible = true
+			},
+			test(){
+				let data = {params : {filename: 'infoForm.json'}}
+				console.log(data.params.filename);
+				this.$http.get('/api/form/fetchJson',{params: {filename: 'infoForm.json'}}).then((response) => {
+					response = response.body; // 获取到数据
+					console.log(response);
+				})
+			}
+		}
 	}
 
 </script>

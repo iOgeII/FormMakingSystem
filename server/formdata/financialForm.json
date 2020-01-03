@@ -1,0 +1,686 @@
+[
+  {
+    "list": [
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "收入"
+                    },
+                    {
+                      "value": "支出"
+                    }
+                  ],
+                  "remote": true,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578048022000_24346"
+                },
+                "name": "账目类型",
+                "key": "1578048022000_24346",
+                "model": "select_1578048022000_24346",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": []
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578048019000_61483"
+        },
+        "name": "栅格布局",
+        "key": "1578048019000_61483",
+        "model": "grid_1578048019000_61483",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578036681000_76827"
+                },
+                "name": "收入",
+                "key": "1578036681000_76827",
+                "model": "input_1578036681000_76827",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "收入格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "现金汇入"
+                    },
+                    {
+                      "value": "货款收入"
+                    },
+                    {
+                      "value": "其他收入"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578036687000_40411"
+                },
+                "name": "收入类型",
+                "key": "1578036687000_40411",
+                "model": "select_1578036687000_40411",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578036675000_45385"
+        },
+        "name": "栅格布局",
+        "key": "1578036675000_45385",
+        "model": "grid_1578036675000_45385",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578036682000_56160"
+                },
+                "name": "支出",
+                "key": "1578036682000_56160",
+                "model": "input_1578036682000_56160",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "支出格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "办公支出"
+                    },
+                    {
+                      "value": "日常支出"
+                    },
+                    {
+                      "value": "业务支出"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578036689000_57560"
+                },
+                "name": "支出类型",
+                "key": "1578036689000_57560",
+                "model": "select_1578036689000_57560",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578036676000_87543"
+        },
+        "name": "栅格布局",
+        "key": "1578036676000_87543",
+        "model": "grid_1578036676000_87543",
+        "rules": []
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  },
+  {
+    "list": [
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "按月统计"
+                    },
+                    {
+                      "value": "按季统计"
+                    },
+                    {
+                      "value": "按年统计"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578048264000_28012"
+                },
+                "name": "统计时长",
+                "key": "1578048264000_28012",
+                "model": "select_1578048264000_28012",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": []
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578048251000_92747"
+        },
+        "name": "栅格布局",
+        "key": "1578048251000_92747",
+        "model": "grid_1578048251000_92747",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037091000_7205"
+                },
+                "name": "营业成本",
+                "key": "1578037091000_7205",
+                "model": "input_1578037091000_7205",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "营业成本格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037140000_27746"
+                },
+                "name": "营业税金",
+                "key": "1578037140000_27746",
+                "model": "input_1578037140000_27746",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "营业税金格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578037089000_11324"
+        },
+        "name": "栅格布局",
+        "key": "1578037089000_11324",
+        "model": "grid_1578037089000_11324",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037412000_37845"
+                },
+                "name": "销售费用",
+                "key": "1578037412000_37845",
+                "model": "input_1578037412000_37845",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "销售费用格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037414000_1962"
+                },
+                "name": "管理费用",
+                "key": "1578037414000_1962",
+                "model": "input_1578037414000_1962",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "管理费用格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578037410000_8976"
+        },
+        "name": "栅格布局",
+        "key": "1578037410000_8976",
+        "model": "grid_1578037410000_8976",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037435000_14305"
+                },
+                "name": "财务费用",
+                "key": "1578037435000_14305",
+                "model": "input_1578037435000_14305",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "财务费用格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578037436000_47710"
+                },
+                "name": "资产减值损失",
+                "key": "1578037436000_47710",
+                "model": "input_1578037436000_47710",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "资产减值损失格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578037433000_91619"
+        },
+        "name": "栅格布局",
+        "key": "1578037433000_91619",
+        "model": "grid_1578037433000_91619",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037472000_43793"
+        },
+        "name": "投资收益",
+        "key": "1578037472000_43793",
+        "model": "input_1578037472000_43793",
+        "rules": [
+          {
+            "type": "string",
+            "message": "投资收益格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037486000_16803"
+        },
+        "name": "营业外支出",
+        "key": "1578037486000_16803",
+        "model": "input_1578037486000_16803",
+        "rules": [
+          {
+            "type": "string",
+            "message": "营业外支出格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037516000_27484"
+        },
+        "name": "营业外收益",
+        "key": "1578037516000_27484",
+        "model": "input_1578037516000_27484",
+        "rules": [
+          {
+            "type": "string",
+            "message": "营业外收益格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037526000_66566"
+        },
+        "name": "利润总额",
+        "key": "1578037526000_66566",
+        "model": "input_1578037526000_66566",
+        "rules": [
+          {
+            "type": "string",
+            "message": "利润总额格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037548000_28357"
+        },
+        "name": "净利润",
+        "key": "1578037548000_28357",
+        "model": "input_1578037548000_28357",
+        "rules": [
+          {
+            "type": "string",
+            "message": "净利润格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578037562000_36789"
+        },
+        "name": "综合收益总额",
+        "key": "1578037562000_36789",
+        "model": "input_1578037562000_36789",
+        "rules": [
+          {
+            "type": "string",
+            "message": "综合收益总额格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "icon": "icon-diy-com-textarea",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "disabled": false,
+          "pattern": "",
+          "placeholder": "",
+          "remoteFunc": "func_1578037586000_55419"
+        },
+        "name": "备注",
+        "key": "1578037586000_55419",
+        "model": "textarea_1578037586000_55419",
+        "rules": []
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  }
+]

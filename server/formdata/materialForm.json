@@ -1,0 +1,953 @@
+[
+{
+  "list": [
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032276000_82585"
+      },
+      "name": "器械名称",
+      "key": "1578032276000_82585",
+      "model": "input_1578032276000_82585",
+      "rules": [
+        {
+          "type": "string",
+          "message": "器械名称格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032289000_23052"
+      },
+      "name": "编号",
+      "key": "1578032289000_23052",
+      "model": "input_1578032289000_23052",
+      "rules": [
+        {
+          "type": "string",
+          "message": "编号格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578032208000_20899"
+              },
+              "name": "采购时间",
+              "key": "1578032208000_20899",
+              "model": "date_1578032208000_20899",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "input",
+              "icon": "icon-input",
+              "options": {
+                "width": "100%",
+                "defaultValue": "",
+                "required": false,
+                "dataType": "string",
+                "pattern": "",
+                "placeholder": "",
+                "disabled": false,
+                "remoteFunc": "func_1578031555000_33550"
+              },
+              "name": "采购地点",
+              "key": "1578031555000_33550",
+              "model": "input_1578031555000_33550",
+              "rules": [
+                {
+                  "type": "string",
+                  "message": "采购地点格式不正确"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578031284000_60669"
+      },
+      "name": "栅格布局",
+      "key": "1578031284000_60669",
+      "model": "grid_1578031284000_60669",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "26%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578031685000_58787"
+      },
+      "name": "采购人",
+      "key": "1578031685000_58787",
+      "model": "input_1578031685000_58787",
+      "rules": [
+        {
+          "type": "string",
+          "message": "采购人格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032052000_64500"
+      },
+      "name": "器械所属单位",
+      "key": "1578032052000_64500",
+      "model": "input_1578032052000_64500",
+      "rules": [
+        {
+          "type": "string",
+          "message": "器械所属单位格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "icon": "icon-date",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "type": "date",
+        "format": "yyyy-MM-dd",
+        "timestamp": false,
+        "required": false,
+        "width": "",
+        "remoteFunc": "func_1578032143000_30950"
+      },
+      "name": "检查日期",
+      "key": "1578032143000_30950",
+      "model": "date_1578032143000_30950",
+      "rules": []
+    }
+  ],
+  "config": {
+    "labelWidth": 100,
+    "labelPosition": "right",
+    "size": "small"
+  }
+},
+{
+  "list": [
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032491000_87001"
+      },
+      "name": "单位名称",
+      "key": "1578032491000_87001",
+      "model": "input_1578032491000_87001",
+      "rules": [
+        {
+          "type": "string",
+          "message": "单位名称格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "100%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032517000_48709"
+      },
+      "name": "部门名称",
+      "key": "1578032517000_48709",
+      "model": "input_1578032517000_48709",
+      "rules": [
+        {
+          "type": "string",
+          "message": "部门名称格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "50%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032793000_12599"
+      },
+      "name": "物资名称1",
+      "key": "1578032973000_94603",
+      "model": "input_1578032793000_12599",
+      "rules": [
+        {
+          "type": "string",
+          "message": "物资名称1格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578032855000_76926"
+              },
+              "name": "入库数量",
+              "key": "1578032998000_64537",
+              "model": "number_1578032855000_76926",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578032876000_68123"
+              },
+              "name": "剩余数量",
+              "key": "1578033006000_63817",
+              "model": "number_1578032876000_68123",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578032924000_12326"
+              },
+              "name": "入库时间",
+              "key": "1578033012000_38613",
+              "model": "date_1578032924000_12326",
+              "rules": []
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578032807000_25411"
+      },
+      "name": "栅格布局",
+      "key": "1578032807000_25411",
+      "model": "grid_1578032807000_25411",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "icon": "icon-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "remoteFunc": "func_1578032939000_43238"
+      },
+      "name": "是否需补货",
+      "key": "1578033044000_63412",
+      "model": "switch_1578032939000_43238",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "50%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032793000_12599"
+      },
+      "name": "物资名称2",
+      "key": "1578033061000_57773",
+      "model": "input_1578032793000_12599",
+      "rules": [
+        {
+          "type": "string",
+          "message": "物资名称2格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033001000_6762"
+              },
+              "name": "入库数量",
+              "key": "1578033072000_17944",
+              "model": "number_1578033001000_6762",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033007000_76867"
+              },
+              "name": "剩余数量",
+              "key": "1578033327000_37311",
+              "model": "number_1578033007000_76867",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578033014000_24626"
+              },
+              "name": "入库时间",
+              "key": "1578033333000_75045",
+              "model": "date_1578033014000_24626",
+              "rules": []
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578032990000_79342"
+      },
+      "name": "栅格布局",
+      "key": "1578032990000_79342",
+      "model": "grid_1578032990000_79342",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "icon": "icon-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "remoteFunc": "func_1578032939000_43238"
+      },
+      "name": "是否需补货",
+      "key": "1578033338000_39204",
+      "model": "switch_1578032939000_43238",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "50%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032793000_12599"
+      },
+      "name": "物资名称3",
+      "key": "1578033356000_10814",
+      "model": "input_1578032793000_12599",
+      "rules": [
+        {
+          "type": "string",
+          "message": "物资名称3格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033075000_14034"
+              },
+              "name": "入库数量",
+              "key": "1578033379000_6539",
+              "model": "number_1578033075000_14034",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033329000_92338"
+              },
+              "name": "剩余数量",
+              "key": "1578033384000_3011",
+              "model": "number_1578033329000_92338",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578033335000_18733"
+              },
+              "name": "入库时间",
+              "key": "1578033390000_46969",
+              "model": "date_1578033335000_18733",
+              "rules": []
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578033070000_16629"
+      },
+      "name": "栅格布局",
+      "key": "1578033070000_16629",
+      "model": "grid_1578033070000_16629",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "icon": "icon-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "remoteFunc": "func_1578032939000_43238"
+      },
+      "name": "是否需补货",
+      "key": "1578033396000_85804",
+      "model": "switch_1578032939000_43238",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "50%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032793000_12599"
+      },
+      "name": "物资名称4",
+      "key": "1578033402000_88616",
+      "model": "input_1578032793000_12599",
+      "rules": [
+        {
+          "type": "string",
+          "message": "物资名称4格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033382000_25795"
+              },
+              "name": "入库数量",
+              "key": "1578033417000_6355",
+              "model": "number_1578033382000_25795",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033386000_54271"
+              },
+              "name": "剩余数量",
+              "key": "1578033420000_74463",
+              "model": "number_1578033386000_54271",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578033392000_88548"
+              },
+              "name": "入库时间",
+              "key": "1578033426000_24112",
+              "model": "date_1578033392000_88548",
+              "rules": []
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578033366000_84723"
+      },
+      "name": "栅格布局",
+      "key": "1578033366000_84723",
+      "model": "grid_1578033366000_84723",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "icon": "icon-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "remoteFunc": "func_1578032939000_43238"
+      },
+      "name": "是否需补货",
+      "key": "1578033433000_76987",
+      "model": "switch_1578032939000_43238",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "50%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578032793000_12599"
+      },
+      "name": "物资名称5",
+      "key": "1578032793000_12599",
+      "model": "input_1578032793000_12599",
+      "rules": [
+        {
+          "type": "string",
+          "message": "物资名称5格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "icon": "icon-grid-",
+      "columns": [
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033419000_36886"
+              },
+              "name": "入库数量",
+              "key": "1578033419000_36886",
+              "model": "number_1578033419000_36886",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "number",
+              "icon": "icon-number",
+              "options": {
+                "width": "",
+                "required": false,
+                "defaultValue": 0,
+                "min": 0,
+                "max": 0,
+                "step": 1,
+                "disabled": false,
+                "controlsPosition": "",
+                "remoteFunc": "func_1578033422000_20765"
+              },
+              "name": "剩余数量",
+              "key": "1578033422000_20765",
+              "model": "number_1578033422000_20765",
+              "rules": []
+            }
+          ]
+        },
+        {
+          "span": 12,
+          "list": [
+            {
+              "type": "date",
+              "icon": "icon-date",
+              "options": {
+                "defaultValue": "",
+                "readonly": false,
+                "disabled": false,
+                "editable": true,
+                "clearable": true,
+                "placeholder": "",
+                "startPlaceholder": "",
+                "endPlaceholder": "",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "timestamp": false,
+                "required": false,
+                "width": "",
+                "remoteFunc": "func_1578033428000_37433"
+              },
+              "name": "入库时间",
+              "key": "1578033428000_37433",
+              "model": "date_1578033428000_37433",
+              "rules": []
+            }
+          ]
+        }
+      ],
+      "options": {
+        "gutter": 0,
+        "justify": "start",
+        "align": "top",
+        "remoteFunc": "func_1578033411000_61205"
+      },
+      "name": "栅格布局",
+      "key": "1578033411000_61205",
+      "model": "grid_1578033411000_61205",
+      "rules": []
+    },
+    {
+      "type": "switch",
+      "icon": "icon-switch",
+      "options": {
+        "defaultValue": false,
+        "required": false,
+        "disabled": false,
+        "remoteFunc": "func_1578032939000_43238"
+      },
+      "name": "是否需补货",
+      "key": "1578032939000_43238",
+      "model": "switch_1578032939000_43238",
+      "rules": []
+    },
+    {
+      "type": "input",
+      "icon": "icon-input",
+      "options": {
+        "width": "26%",
+        "defaultValue": "",
+        "required": false,
+        "dataType": "string",
+        "pattern": "",
+        "placeholder": "",
+        "disabled": false,
+        "remoteFunc": "func_1578033477000_99481"
+      },
+      "name": "清查人",
+      "key": "1578033477000_99481",
+      "model": "input_1578033477000_99481",
+      "rules": [
+        {
+          "type": "string",
+          "message": "清查人格式不正确"
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "icon": "icon-date",
+      "options": {
+        "defaultValue": "",
+        "readonly": false,
+        "disabled": false,
+        "editable": true,
+        "clearable": true,
+        "placeholder": "",
+        "startPlaceholder": "",
+        "endPlaceholder": "",
+        "type": "date",
+        "format": "yyyy-MM-dd",
+        "timestamp": false,
+        "required": false,
+        "width": "",
+        "remoteFunc": "func_1578033456000_87131"
+      },
+      "name": "清查时间",
+      "key": "1578033456000_87131",
+      "model": "date_1578033456000_87131",
+      "rules": []
+    }
+  ],
+  "config": {
+    "labelWidth": 100,
+    "labelPosition": "right",
+    "size": "small",
+    "customClass": ""
+  }
+}
+]

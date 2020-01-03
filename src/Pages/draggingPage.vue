@@ -74,12 +74,12 @@
 						<widget-form
 							:data = "widgetForm"
 							:select.sync="widgetFormSelect"
-							style="height:95%;border: 1px solid #f4f6fc;"
+							style="border: 1px solid #f4f6fc;"
 						></widget-form>
 					</el-main>
 				</el-container>
 
-				<el-aside width="250px" class="dp-right">
+				<el-aside width="270px" class="dp-right">
 					<el-tabs v-model="activeName">
 						<el-tab-pane label="字段配置" name="widget">
 							<widget-config :data="widgetFormSelect" v-if="widgetFormSelect"></widget-config>

@@ -47,11 +47,9 @@
 		data(){
 			return {
 				tableData: [{
-					form_name: '入职登记表',
+					form_name: '器械清查',
                 }, {
-	                form_name: '离职登记表',
-				},{
-	                form_name: '职务调动登记表',
+	                form_name: '库存清查',
 				},
 				],
 				previewVisible: false,
@@ -70,7 +68,7 @@
 			handlePreview (id) {
 				this.$message('加载中 请稍候');
 				this.previewVisible = false
-				let data = {params : {filename: 'personForm.json'}}
+				let data = {params : {filename: 'materialForm.json'}}
 				this.$http.get('/api/form/fetchJson',data).then((response) => {
 					const vacaForm = response.body[id]; // 获取到数据
 					this.configData = vacaForm;
@@ -79,7 +77,7 @@
 			},
 			handleGenerateJson (id) {
 				this.jsonVisible = false
-				let data = {params : {filename: 'personForm.json'}}
+				let data = {params : {filename: 'materialForm.json'}}
 				this.$http.get('/api/form/fetchJson',data).then((response) => {
 					const strForm = response.body[id]; // 获取到数据
 					const formatForm = JSON.stringify(strForm, null, '\t')
@@ -89,7 +87,7 @@
       		},
 			handleGenerateHtml (id) {
 				this.htmlVisible = false
-				let data = {params : {filename: 'personForm.json'}}
+				let data = {params : {filename: 'materialForm.json'}}
 				this.$http.get('/api/form/fetchJson',data).then((response) => {
 					const strForm = response.body[id]; // 获取到数据
 					const formatForm = JSON.stringify(strForm, null, '\t')
@@ -98,9 +96,9 @@
 				this.htmlVisible = true
 			},
 			test(){
-				let data = {params : {filename: 'personForm.json'}}
+				let data = {params : {filename: 'materialForm.json'}}
 				console.log(data.params.filename);
-				this.$http.get('/api/form/fetchJson',{params: {filename: 'personForm.json'}}).then((response) => {
+				this.$http.get('/api/form/fetchJson',{params: {filename: 'materialForm.json'}}).then((response) => {
 					response = response.body; // 获取到数据
 					console.log(response);
 				})

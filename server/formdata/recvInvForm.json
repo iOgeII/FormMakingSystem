@@ -1,0 +1,665 @@
+[
+  {
+    "list": [
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578035768000_62776"
+        },
+        "name": "客户名称",
+        "key": "1578035768000_62776",
+        "model": "input_1578035768000_62776",
+        "rules": [
+          {
+            "type": "string",
+            "message": "客户名称格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578035801000_86921"
+                },
+                "name": "品名及规格",
+                "key": "1578035801000_86921",
+                "model": "input_1578035801000_86921",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "品名及规格格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578035827000_79219"
+                },
+                "name": "单位",
+                "key": "1578035827000_79219",
+                "model": "input_1578035827000_79219",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "单位格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578035798000_93388"
+        },
+        "name": "栅格布局",
+        "key": "1578035798000_93388",
+        "model": "grid_1578035798000_93388",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "number",
+                "icon": "icon-number",
+                "options": {
+                  "width": "",
+                  "required": false,
+                  "defaultValue": 0,
+                  "min": 0,
+                  "max": 0,
+                  "step": 1,
+                  "disabled": false,
+                  "controlsPosition": "",
+                  "remoteFunc": "func_1578047592000_12988"
+                },
+                "name": "数量",
+                "key": "1578047592000_12988",
+                "model": "number_1578047592000_12988",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578035838000_87328"
+                },
+                "name": "单价",
+                "key": "1578035838000_87328",
+                "model": "input_1578035838000_87328",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "单价格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578035834000_79313"
+        },
+        "name": "栅格布局",
+        "key": "1578035834000_79313",
+        "model": "grid_1578035834000_79313",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578035863000_75764"
+        },
+        "name": "总金额",
+        "key": "1578035863000_75764",
+        "model": "input_1578035863000_75764",
+        "rules": [
+          {
+            "type": "string",
+            "message": "总金额格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578035870000_55497"
+        },
+        "name": "备注",
+        "key": "1578035870000_55497",
+        "model": "input_1578035870000_55497",
+        "rules": [
+          {
+            "type": "string",
+            "message": "备注格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578035883000_42482"
+        },
+        "name": "收款人",
+        "key": "1578035883000_42482",
+        "model": "input_1578035883000_42482",
+        "rules": [
+          {
+            "type": "string",
+            "message": "收款人格式不正确"
+          }
+        ]
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  },
+  {
+    "list": [
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036199000_92474"
+        },
+        "name": "发票代码",
+        "key": "1578036199000_92474",
+        "model": "input_1578036199000_92474",
+        "rules": [
+          {
+            "type": "string",
+            "message": "发票代码格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036207000_99698"
+        },
+        "name": "发票号码",
+        "key": "1578036207000_99698",
+        "model": "input_1578036207000_99698",
+        "rules": [
+          {
+            "type": "string",
+            "message": "发票号码格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036246000_60488"
+        },
+        "name": "查验码",
+        "key": "1578036246000_60488",
+        "model": "input_1578036246000_60488",
+        "rules": [
+          {
+            "type": "string",
+            "message": "查验码格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "date",
+                "icon": "icon-date",
+                "options": {
+                  "defaultValue": "",
+                  "readonly": false,
+                  "disabled": false,
+                  "editable": true,
+                  "clearable": true,
+                  "placeholder": "",
+                  "startPlaceholder": "",
+                  "endPlaceholder": "",
+                  "type": "date",
+                  "format": "yyyy-MM-dd",
+                  "timestamp": false,
+                  "required": false,
+                  "width": "",
+                  "remoteFunc": "func_1578047720000_48189"
+                },
+                "name": "开票日期",
+                "key": "1578047720000_48189",
+                "model": "date_1578047720000_48189",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "select",
+                "icon": "icon-select",
+                "options": {
+                  "defaultValue": "",
+                  "multiple": false,
+                  "disabled": false,
+                  "clearable": false,
+                  "placeholder": "",
+                  "required": false,
+                  "showLabel": false,
+                  "width": "",
+                  "options": [
+                    {
+                      "value": "Option 1"
+                    },
+                    {
+                      "value": "Option 2"
+                    },
+                    {
+                      "value": "Option 3"
+                    }
+                  ],
+                  "remote": false,
+                  "filterable": false,
+                  "remoteOptions": [],
+                  "props": {
+                    "value": "value",
+                    "label": "label"
+                  },
+                  "remoteFunc": "func_1578047732000_69378"
+                },
+                "name": "行业分类",
+                "key": "1578047732000_69378",
+                "model": "select_1578047732000_69378",
+                "rules": []
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578036348000_73646"
+        },
+        "name": "栅格布局",
+        "key": "1578036348000_73646",
+        "model": "grid_1578036348000_73646",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036371000_17980"
+        },
+        "name": "付款方",
+        "key": "1578036371000_17980",
+        "model": "input_1578036371000_17980",
+        "rules": [
+          {
+            "type": "string",
+            "message": "付款方格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578036435000_12408"
+                },
+                "name": "项目",
+                "key": "1578036435000_12408",
+                "model": "input_1578036435000_12408",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "项目格式不正确"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578036444000_15761"
+                },
+                "name": "计量单位",
+                "key": "1578036444000_15761",
+                "model": "input_1578036444000_15761",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "计量单位格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578036433000_77858"
+        },
+        "name": "栅格布局",
+        "key": "1578036433000_77858",
+        "model": "grid_1578036433000_77858",
+        "rules": []
+      },
+      {
+        "type": "grid",
+        "icon": "icon-grid-",
+        "columns": [
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "number",
+                "icon": "icon-number",
+                "options": {
+                  "width": "",
+                  "required": false,
+                  "defaultValue": 0,
+                  "min": 0,
+                  "max": 0,
+                  "step": 1,
+                  "disabled": false,
+                  "controlsPosition": "",
+                  "remoteFunc": "func_1578047748000_23747"
+                },
+                "name": "数量",
+                "key": "1578047748000_23747",
+                "model": "number_1578047748000_23747",
+                "rules": []
+              }
+            ]
+          },
+          {
+            "span": 12,
+            "list": [
+              {
+                "type": "input",
+                "icon": "icon-input",
+                "options": {
+                  "width": "100%",
+                  "defaultValue": "",
+                  "required": false,
+                  "dataType": "string",
+                  "pattern": "",
+                  "placeholder": "",
+                  "disabled": false,
+                  "remoteFunc": "func_1578036457000_42299"
+                },
+                "name": "单价",
+                "key": "1578036457000_42299",
+                "model": "input_1578036457000_42299",
+                "rules": [
+                  {
+                    "type": "string",
+                    "message": "单价格式不正确"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "options": {
+          "gutter": 0,
+          "justify": "start",
+          "align": "top",
+          "remoteFunc": "func_1578036454000_7350"
+        },
+        "name": "栅格布局",
+        "key": "1578036454000_7350",
+        "model": "grid_1578036454000_7350",
+        "rules": []
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036473000_69696"
+        },
+        "name": "总金额",
+        "key": "1578036473000_69696",
+        "model": "input_1578036473000_69696",
+        "rules": [
+          {
+            "type": "string",
+            "message": "总金额格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036488000_87142"
+        },
+        "name": "收款方",
+        "key": "1578036488000_87142",
+        "model": "input_1578036488000_87142",
+        "rules": [
+          {
+            "type": "string",
+            "message": "收款方格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036516000_92681"
+        },
+        "name": "交易流水号",
+        "key": "1578036516000_92681",
+        "model": "input_1578036516000_92681",
+        "rules": [
+          {
+            "type": "string",
+            "message": "交易流水号格式不正确"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "icon": "icon-input",
+        "options": {
+          "width": "100%",
+          "defaultValue": "",
+          "required": false,
+          "dataType": "string",
+          "pattern": "",
+          "placeholder": "",
+          "disabled": false,
+          "remoteFunc": "func_1578036497000_53344"
+        },
+        "name": "备注",
+        "key": "1578036497000_53344",
+        "model": "input_1578036497000_53344",
+        "rules": [
+          {
+            "type": "string",
+            "message": "备注格式不正确"
+          }
+        ]
+      }
+    ],
+    "config": {
+      "labelWidth": 100,
+      "labelPosition": "right",
+      "size": "small",
+      "customClass": ""
+    }
+  }
+]

@@ -8,10 +8,17 @@ const login = r => require.ensure([], () => r(require('@/Pages/login')), 'login'
 
 const manage = r => require.ensure([], () => r(require('@/Pages/manage')), 'manage');
 const home = r => require.ensure([], () => r(require('@/Pages/home')), 'home');
+
 const personManage = r => require.ensure([], () => r(require('@/Pages/personManage')), 'personManage');
 const infoRegist = r => require.ensure([], () => r(require('@/Pages/infoRegist')), 'infoRegist');
 
+const receiptInvoice = r => require.ensure([], () => r(require('@/Pages/receiptInvoice')), 'receiptInvoice');
+const financialStatistics = r => require.ensure([], () => r(require('@/Pages/financialStatistics')), 'financialStatistics');
+
+const materialStatictics = r => require.ensure([], () => r(require('@/Pages/materialStatictics')), 'materialStatictics');
+
 const vacationApplication = r => require.ensure([], () => r(require('@/Pages/vacationApplication')), 'vacationApplication');
+
 const draggingPage = r => require.ensure([], () => r(require('@/Pages/draggingPage')), 'draggingPage');
 const explain = r => require.ensure([], () => r(require('@/Pages/explain')), 'explain');
 
@@ -42,6 +49,18 @@ const routes = [
     		component: infoRegist,
     		meta: ['人事表单', '信息登记']
     	},{
+    		path: '/receiptInvoice',
+    		component: receiptInvoice,
+    		meta: ['财务表单', '收据发票']
+    	},{
+    		path: '/financialStatistics',
+    		component: financialStatistics,
+    		meta: ['财务表单', '收支利润']
+    	},{
+    		path: '/materialStatictics',
+    		component: materialStatictics,
+    		meta: ['资产表单', '物资统计']
+    	},{
     		path: '/vacationApplication',
     		component: vacationApplication,
     		meta: ['其他表单', '休假申请']
@@ -52,7 +71,7 @@ const routes = [
         },{
             path: '/explain',
             component: explain,
-            meta: '使用说明'
+            meta: ['使用说明']
         }]
     }
 ]
