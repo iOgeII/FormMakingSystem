@@ -5,7 +5,7 @@
 		<el-main class="dp2-main">
 			<el-container>
 				<!-- 左边 -->
-				<el-aside width="150px" class="fm-left">
+				<el-aside width="200px" class="fm-left" style="height:500px">
 					<div class="components-list">
 						<template>
 							<div class="widget-cate">基本组件</div>
@@ -34,6 +34,7 @@
 								</el-form>
 							</draggable>
 						</template>
+						<el-divider></el-divider>
 						<template>
 							<div class="widget-cate">布局组件</div>
 							<draggable
@@ -69,15 +70,16 @@
 						<el-button type="text" size="medium" icon="el-icon-tickets" @click="handleGenerateJson()">生成JSON</el-button>
 						<el-button type="text" size="medium" icon="el-icon-document" @click="handleGenerateHtml()">生成HTML</el-button>
 					</el-header>
-					<el-main>
+					<el-main style="padding:5px">
 						<widget-form
 							:data = "widgetForm"
 							:select.sync="widgetFormSelect"
+							style="height:95%;border: 1px solid #f4f6fc;"
 						></widget-form>
 					</el-main>
 				</el-container>
 
-				<el-aside width="325px" class="fm-right">
+				<el-aside width="250px" class="dp-right">
 					<el-tabs v-model="activeName">
 						<el-tab-pane label="字段配置" name="widget">
 							<widget-config :data="widgetFormSelect" v-if="widgetFormSelect"></widget-config>
@@ -348,29 +350,55 @@ export default {
 </script>
 
 <style lang="scss">
+.dp2-container{
+	height: 100%
+}
+
 .widget-empty{
   background-position: 50%;
 }
 
 .widget-cate{
 	width: 100%;
-	overflow:hidden
+	overflow: hidden;
+	font-size: 16px
 }
 
 .components-list {
-	padding:0%;
+	padding: 0%;
     display: block;
 	height: 100%;
 }
 
 .list_group{
-	padding:0%
+	padding: 0%;
+	overflow: auto;
 }
 
 .form-edit-widget-label{
-	font-size: 10px;
+	font-size: 12px;
 	width: 47%;
-	height: 30px;
+	height: 26px;
+	text-align: left;
+	line-height: 0%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	position: relative;
+    float: left;
+    left: 0;
+    overflow: hidden;
+    color: #333;
+	border: 1px solid #f4f6fc;
+}
+
+.list-group-item{
+	font-size: 12px;
+	width: 47%;
+	height: 26px;
+	text-align: left;
+	line-height: 0%;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	position: relative;
     float: left;
     left: 0;
@@ -379,5 +407,8 @@ export default {
 	border: 2px solid #f4f6fc;
 }
 
+.dp-right{
+	overflow: auto;
+}
 </style>
 

@@ -217,7 +217,7 @@ export const basicComponents = [
   {
     type: 'rate',
     name: '评分',
-    icon: 'icon-pingfen1',
+    icon: 'dp-icon-pingfen',
     options: {
       defaultValue: null,
       max: 5,
